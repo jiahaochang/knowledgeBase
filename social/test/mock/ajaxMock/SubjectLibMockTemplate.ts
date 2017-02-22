@@ -8,7 +8,7 @@ subjectLibMockTemplateTemp[subjectLibActionTypes.INIT_SUBJLIB_CURRENTSUBJ] = {
     result:{
         subjects: [
             {
-                subjectName: "语文",
+                subjectName: "本草纲目",
                 references: [
                     {
                         referenceID:"",
@@ -28,7 +28,7 @@ subjectLibMockTemplateTemp[subjectLibActionTypes.INIT_SUBJLIB_CURRENTSUBJ] = {
                 ]
             },
             {
-                subjectName: "数学",
+                subjectName: "百草注",
                 references: [
                     {
                         referenceID:"",
