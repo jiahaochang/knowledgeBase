@@ -1,0 +1,102 @@
+@import "commonStyle";
+
+//班主任评价学生 月度总结 月份列表
+.month-block-parent{
+  border-top: 1px solid @colorBorderGray;
+  border-left: 1px solid @colorBorderGray;
+  margin-bottom: 1rem;
+  .month-block{
+    background-color: #C3C5C7;
+    line-height: 30px;
+    text-align: center;
+    border-right: 1px solid @colorBorderGray;
+    border-bottom: 1px solid @colorBorderGray;
+    width: 20%!important;
+    cursor: pointer;
+    &.active {
+      background-color: @colorBlueBack;
+      color: #ffffff;
+    }
+  }
+
+}
+
+
+
+//班团内活动--form
+.class-activity-form{
+  .block-box-shadow(9px,9px,9px,9px);
+  margin-bottom: 1rem;
+  .ant-form-item{
+    font-size: inherit;
+    color: inherit;
+    margin-bottom: 10px;
+    label{
+      font-size: inherit;
+      color: inherit;
+      font-weight: bold;
+    }
+    .ant-form-item-control{
+      line-height: 38px;
+    }
+    .ant-input{
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+  .col-24{
+    .ant-form-item-control{
+      line-height: inherit;
+      margin-top: 8px
+    }
+  }
+}
+//过住记录box  #eaf8fe   #d5f1fd  #9DC5D6  #C5E1EC
+.past-record-single{
+  border-radius: 20px;
+  background: #C5E1EC;
+  border-top: 2px solid #9DC5D6;
+  padding: 20px;
+  margin-bottom: 1rem;
+  i{
+    font-size: 20px;
+    color:#607d8b;
+    padding-right: 5px;
+    &.fa-thumbs-o-up{
+      color: @colorGreenSuccess;
+    }
+  }
+}
+
+//班主任评价学生--综合评价--headerwithselect
+.header-with-select{
+  text-align: center;
+  .header{
+    color: #ffffff;
+    line-height: 28px;
+  }
+  .ant-select-selection{
+    border-radius: 0px;
+    border-color: @colorBorderGray;
+    border-left: none;
+    text-align: center;
+  }
+  .finished-right-text{
+    border:1px solid @colorBorderGray;
+    border-left: none;
+    line-height: 26px;
+  }
+}
+//textarea placeholder 样式
+textarea::-webkit-input-placeholder{
+  color:@colorFontsDefault!important;
+}
+textarea:-moz-placeholder {
+  color:@colorFontsDefault!important;
+}
+textarea::-moz-placeholder{
+  color:@colorFontsDefault!important;
+}
+textarea:-ms-input-placeholder {
+  color:@colorFontsDefault!important;
+}

@@ -1,0 +1,90 @@
+班主任主页：
+1.学生表现记录  集成完成by tcy  后台：文超
+获取初始字典数据：/studentPerformanceRecord/Get/studentPerformanceOptions
+获取数据：/studentPerformanceRecord/Get/studentPerformanceRecords
+保存：/studentPerformanceRecord/Set/saveStudentPerformanceRecord
+删除：/studentPerformanceRecord/Set/deleteStudentPerformanceRecord
+2.班级通知：
+班主任保存通知：/teacherNotification/Set/saveNotification
+班主任读取通知：/teacherNotification/Get/notifications
+班主任删除通知：/teacherNotification/Set/deleteNotification
+学生获取通知：/teacherNotifiedUser/Get/notifications
+3.班团活动  集成完成by tcy  后台：子建
+获取：/classActivity/Get/stuClassActivityInfos
+保存：/classActivity/Set/saveStuClassActivityInfo
+删除：/classActivity/Set/deleteStuClassActivityInfo
+4.特殊学生家校联系  集成完成by tcy   后台：文超
+获取：/specialStudentRecord/Get/specialStudentRecords
+保存：/specialStudentRecord/Set/saveSpecialStudentRecord
+删除：/specialStudentRecord/Set/deleteSpecialStudentRecord
+获取特殊学生列表：/specialStudent/Get/specialStudents	
+新增特殊学生列表：/specialStudent/Set/insertSpecialStudent
+
+5.评价学生（综合评价） 后台就绪 传铃 前台就绪 春燕
+获取：/stuTermEvaluate/Get/stuTermEvaluates
+保存：/stuTermEvaluate/Set/saveStuTermEvaluates
+6.评价学生（月度评价） 后台就绪 志健 前台就绪 春燕
+获取：/stuMonthSummaryEvaluate/Get/stuMonthSummaryEvaluate
+保存：/stuMonthSummaryEvaluate/Set/saveStuMonthSummaryEvaluate
+7.评语管理  集成完成by tcy  后台：传铃
+获取：/moralComment/Get/moralComments
+保存：/moralComment/Set/saveMoralComment
+删除：/moralComment/Set/deleteMoralComment
+
+8.学生打分 后台就绪 传铃
+获取：/studentEvaluationScore/Get/studentEvaluationScores
+保存：/studentEvaluationScore/Set/setStudentEvaluationScore
+
+9.学生列表不打分
+获取：/studentPerformanceRecord/Get/performanceStudentInfos
+
+学期总结分析
+1：月度总结  后台就绪 志健不参考
+获取月度总结数据：/stuMonthSummary/Get/stuMonthSummarys
+保存月度总结数据：/stuMonthSummary/Set/saveStuMonthSummarys
+2：学期总结  集成完成by tcy 后台：传铃【后台有部分暂时写死】
+获取学期总结数据：/stuTermSummary/Get/stuTermSummarys
+保存学期总评总结数据：/stuTermSummary/Set/saveStuTermSummarys
+保存学期素质总结数据：/stuTermSummary/Set/saveStuTermQualitySummarys
+
+3：同学互评   集成完成by tcy   后台：文超
+获取：/stuImpression/Set/saveStudentEvaluates
+保存：/stuImpression/Get/studentEvaluates
+
+管理员页面-教师账户
+1.月度主题 后台就绪 志健
+获取：/schoolMonthTheme/Get/schoolMonthThemes
+保存：/schoolMonthTheme/Set/saveSchoolMonthTheme
+2.同学互评字典管理 后台就绪 传铃
+获取：/schoolImpressionDict/Get/impressionDicts
+删除：/schoolImpressionDict/Set/removeImpressionDict
+保存：/schoolImpressionDict/Set/saveImpressionDict
+职业库 集成完成by tcy  后台：传铃
+获取职业大类和职业小类：/jobCategory/Get/jobCategoriesWithSubJob
+获取具体职业介绍：/careerIntroduce/Get/careerMlByCareerCategoryId
+院校库 前台就绪 春燕
+获取院校信息：/collegeLibrary/Get/collegeInfos
+获取院校主页模板：/collegeLibrary/Get/collegeHomeDicts
+获取院校主页信息：/collegeLibrary/Get/collegeInfo
+学科库 前台 tcy  后台：子建 集成完成
+获取数据库中对应表中的数据:/subjectReference/Get/subjectReferences
+专业库   前台春燕 后台：传铃 集成完成
+获取专业和专业门类字典数据：/majorLibrary/Get/majorHomeDickInfos
+获取单个专业详细信息：/majorLibrary/Get/majorDetail
+
+个人页面--学生帐户 
+1.目标设定  前台 tcy  后台：文超 集成完成
+获取：/stuTargetSetting/Get/stuTargetSetting
+保存：/stuTargetSetting/Set/saveStuTargetSetting
+
+2.自我剖析  前台 tcy  后台：子建 集成完成
+获取：/selfAnalyse/Get/selfAnalyseInfos
+保存：/selfAnalyse/Set/saveSelfAnalyseInfo
+
+
+根据用户名，搜索学生
+传送关键字，返回搜索信息列表：/stuSearch/Get/stuInfos
+
+最近来访       后台：开发完成，准备测试
+获取来访列表：/stuLatestVisitor/Get/stuLatestVisitors
+更新最新来访信息：/stuLatestVisitor/Set/saveStuLatestVisitor

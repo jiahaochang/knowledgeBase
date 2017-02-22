@@ -1,0 +1,11 @@
+
+//所有程序中用到的有关此模块的actionID 都引用于此 ****必须全局唯一*****
+//获取价值观测试完成状态
+export const GET_VALUEASSESS_VALUEASSESSFINISHSTATE = "GET_VALUEASSESS_VALUEASSESSFINISHSTATE";
+//获取价值观测试题目
+export const GET_VALUEASSESS_QUIZZES = "GET_VALUEASSESS_QUIZZES";
+//获取价值观测试引导页导语
+export const GET_VALUEASSESS_VALUE_INTRODUCTION = "GET_VALUEASSESS_VALUE_INTRODUCTION";
+// 获取价值观测试结果
+export const GET_VALUEASSESS_VALUE_REPORT = "GET_VALUEASSESS_VALUE_REPORT";
+//提交价值观测试的答案

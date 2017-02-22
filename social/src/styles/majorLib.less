@@ -1,0 +1,76 @@
+@import "commonStyle";
+
+//专业库--蓝色框本科专业X个
+.blue-raduis-box{
+  background: @colorBlueNormal;
+  color: #ffffff;
+  .borderRadius(6px);
+  font-size: 14px;
+  padding: 8px;
+  margin-right: 5px;
+  &:hover{
+    color: #ffffff;
+  }
+}
+//专业库--majorML显示子类专业
+.profession-single{
+  margin-bottom: 50px;
+  .profession-title{
+    font-weight: bold;
+    color: @colorBlueNormal;
+    padding-bottom: 5px;
+    border-bottom: 2px solid @colorBlueNormal;
+  }
+  .profession-content{
+    list-style: none;
+    margin:10px 0 0;
+    li{
+      padding-right:25px ;
+      float:left;
+      cursor: pointer;
+      &:hover{
+        color: @colorBlueNormal;
+      }
+    }
+  }
+
+}
+.show-search-text{
+  color: #e39827;
+  font-weight: bold;
+  margin-top: 20px;
+}
+//专业库--右侧专业选择条件
+.profession-screen-single{
+  margin-bottom: 40px;
+  .profession-screen-title{
+    text-align: center;
+    margin-bottom: 5px;
+    background-color: @colorBlueBack;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 37px;
+    font-weight: normal;
+  }
+  .profession-screen-content{
+    line-height: 33px;
+    margin-bottom: 15px;
+    background: url("@{imgURL}dashed-line.png");
+    li{
+      float:left;
+      padding-left: 10px;
+      margin-right: 5px;
+      white-space: nowrap;
+      cursor: pointer;
+      &.active{
+        color: @colorRedYellow;
+        &:hover{
+          color: @colorRedYellow;
+        }
+      }
+      &:hover{
+        color: @colorBlueNormal;
+      }
+    }
+  }
+}

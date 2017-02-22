@@ -1,0 +1,1130 @@
+@import "commonStyle";
+//2列布局 带左侧标签 左侧布局
+.col2-withLeftTab-leftSide{
+  float: left;
+  width: @widthLeftMenu;
+}
+
+//2列布局 带左侧标签 右侧布局
+.col2-withLeftTab-rightSide{
+  margin-left: @widthLeftMenu;
+  padding: 0 20px;
+}
+
+//文本下面加横线
+.text-colorLine{
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: 2px solid @colorBorderGray;
+  .rightText{
+    float: right;
+    font-weight: normal;
+    color: @colorFontsDefault;
+    font-size: 14px;
+    .scaletext{
+      padding-left: 15px;
+      cursor: pointer;
+      i{
+        padding-left: 3px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+//header中加入添加按钮，含有收缩功能
+.header-with-add{
+  border: 1px solid @colorBorderGray;
+  height: 36px;
+  line-height: 35px;
+  background-color: #ffffff;
+  .title{
+    width: 200px;
+    color: #FFFFFF;
+    text-align: center;
+    float: left;
+  }
+  .addtitle{
+    cursor: pointer;
+    &:hover{
+      color: #666;
+    }
+    i{
+      margin-left: 40px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+  .rightText{
+    float: right;
+    color: @colorFontsDefault;
+    padding-right: 8px;
+    cursor: pointer;
+  }
+
+}
+
+//带有点赞和评论按钮的颜色内容框、
+.content-with-likeAndcomment{
+  padding: 10px 10px 0px;
+  border: 1px solid @colorBorderGray;
+  .footer-like-comment{
+    border-top: 1px solid @colorBorderGray;
+    padding: 5px 0px;
+    height: 40px;
+    [class*="col-12"]{
+      display: block;
+      text-align: center;
+      color: #7b858c;
+      font-size: 14px;
+      line-height: 30px;
+      cursor: pointer;
+      position: relative;
+      &:hover{
+        color: @colorBlueClickLike;
+      }
+      &:first-child{
+        border-right: 1px solid @colorBorderGray;
+      }
+      &.active:before{
+        font: normal normal normal 16px/1 FontAwesome, sans-serif;
+        content: "\F077";
+        position: absolute;
+        left: 48%;
+        bottom: -9px;
+        color: #aaaaaa;
+        background-color: #ffffff;
+      }
+      i{
+        font-size: 20px;
+        padding-right: 8px;
+
+      }
+      .fa-thumbs-o-up.active:before{
+        content: "\f164";
+        color: @colorBlueClickLike;
+      }
+    }
+
+  }
+
+}
+//带有颜色标题的内容框，学期整体分析的灰色边框+带颜色的200px标题
+.card-with-title-box{
+  overflow: hidden;
+  .title{
+    width: 200px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 30px;
+  }
+  .content{
+    padding-bottom: 5px;
+  }
+}
+//蓝色下面的横线及内容方框
+.blueBack {
+  .text-colorLine{
+    color: @colorBlueNormal;
+    border-color: @colorBlueNormal;
+    .content-box .title{
+      background-color: @colorBlueBack;
+      border:1px solid @colorBlueBack;
+    }
+  }
+  .header-with-add{
+    border-color:@colorBlueBack;
+    .title{
+      background-color: @colorBlueBack;
+    }
+    .addtitle i{
+      color: @colorBlueBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorBlueBack;
+    .edit{
+      color: @colorBlueBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorBlueBack;
+  }
+  .header-with-select{
+    .header{
+      background-color: @colorBlueBack;
+    }
+  }
+}
+
+//绿色下面的横线及内容方框
+.greenBack {
+  .text-colorLine{
+    color: @colorGreenBack;
+    border-color: @colorGreenBack;
+    .content-box .title{
+      background-color: @colorGreenBack;
+      border:1px solid @colorGreenBack;
+    }
+  }
+  .header-with-add{
+    border-color:@colorGreenBack;
+    .title{
+      background-color: @colorGreenBack;
+    }
+    .addtitle i{
+      color: @colorGreenBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorGreenBack;
+    .edit{
+      color: @colorGreenBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorGreenBack;
+  }
+  .header-with-select{
+    .header{
+      background-color: @colorGreenBack;
+    }
+  }
+}
+
+//紫色下面的横线及内容方框
+.purpleBack {
+  .header-with-add{
+    border-color:@colorPurpleBack;
+    .title{
+      background-color: @colorPurpleBack;
+    }
+    .addtitle i{
+      color: @colorPurpleBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorPurpleBack;
+    .edit{
+      color: @colorPurpleBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorPurpleBack;
+  }
+  .header-with-select{
+    .header{
+      background-color: @colorPurpleBack;
+    }
+  }
+}
+
+//黄色下面的横线及内容方框
+.yellowBack {
+  .header-with-add{
+    border-color:@colorYellowBack;
+    .title{
+      background-color: @colorYellowBack;
+    }
+    .addtitle i{
+      color: @colorYellowBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorYellowBack;
+    .edit{
+      color: @colorYellowBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorYellowBack;
+  }
+  .header-with-select{
+    .header{
+      background-color: @colorYellowBack;
+    }
+  }
+}
+
+//深蓝色下面的横线及内容方框
+.blueDuckDuckBack {
+  .header-with-add{
+    border-color: @colorBlueDarkDarkBack;
+    .title{
+      background-color: @colorBlueDarkDarkBack;
+    }
+    .addtitle i{
+      color: @colorBlueDarkDarkBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorBlueDarkDarkBack;
+    .edit{
+      color: @colorBlueDarkDarkBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorBlueDarkDarkBack;
+  }
+}
+
+//桔色下面的横线及内容方框
+.orangeBack {
+  .header-with-add{
+    border-color:@colorOrangeBack;
+    .title{
+      background-color: @colorOrangeBack;
+    }
+    .addtitle i{
+      color: @colorOrangeBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorOrangeBack;
+    .edit{
+      color: @colorOrangeBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorOrangeBack;
+  }
+}
+
+//蓝绿色下面的横线及内容方框
+.greenBlueBack {
+  .header-with-add{
+    border-color:@colorGreenBLueBack;
+    .title{
+      background-color: @colorGreenBLueBack;
+    }
+    .addtitle i{
+      color: @colorGreenBLueBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorGreenBLueBack;
+    .edit{
+      color: @colorGreenBLueBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorGreenBLueBack;
+  }
+}
+
+//红色下面的横线及内容方框
+.redDuckBack {
+  .header-with-add{
+    border-color:@colorRedDuckBack;
+    .title{
+      background-color: @colorRedDuckBack;
+    }
+    .addtitle i{
+      color: @colorRedDuckBack;
+    }
+  }
+  .content-with-likeAndcomment{
+    border-color: @colorRedDuckBack;
+    .edit{
+      color: @colorRedDuckBack;
+    }
+  }
+  .card-with-title-box .title{
+    background-color: @colorRedDuckBack;
+  }
+}
+
+//收起展开特效
+.code-box .expand.collapse {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+.code-box .collapse {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: all 0.3s ease;
+}
+
+.code-box .highlight-wrapper {
+  opacity: 1;
+ /* &:hover{
+    box-shadow: 0 0 6px rgba(0,0,0,.15);
+  }*/
+}
+.code-box .highlight-wrapper-expand {
+  max-height: 0;
+  opacity: 0;
+}
+
+//tab-bar  蓝色的tabs
+.tab-bar-parent{
+  .tab-bar{
+    li{
+      height: 40px;
+      line-height: 40px;
+      color: #050505;
+      background-color: #ffffff;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      &:not(:last-child){
+        border-right: 1px solid #dedede;
+      }
+      &:nth-child(1){
+        border-bottom:2px solid #E7B402 ;
+        &.active,&:hover{
+          background-color:#E7B402  ;
+        }
+      }
+      &:nth-child(2){
+        border-bottom:2px solid #E97E06 ;
+        &.active,&:hover{
+          background-color:#E97E06  ;
+        }
+      }
+      &:nth-child(3){
+        border-bottom:2px solid #1AAF5E ;
+        &.active,&:hover{
+          background-color:#1AAF5E  ;
+        }
+        }
+      &:nth-child(4){
+        border-bottom:2px solid #3D96DC ;
+        &.active,&:hover{
+          background-color:#3D96DC  ;
+        }
+      }
+      &.active,&:hover{
+        color: #ffffff;
+        border-top: none;
+      }
+    }
+  }
+}
+//对谁可见的眼睛icon
+.eye{
+  text-align: right;
+  margin: 0.5rem 0.5rem 0.2rem;
+  font-size: 14px;
+  i{
+    padding-right: 3px;
+  }
+}
+//桔色小方框
+.orange-small-block{
+  background-color: #ffa726;
+  border-color: #fb8c00;
+  width: 15px;
+  height: 13px;
+  display: inline-block;
+}
+.major-intended .row>div{
+  margin-bottom: 10px;
+}
+//蓝色小方框
+.blue-small-block{
+  background-color: #2774b8;
+  border-color: #117ec2;
+  width: 15px;
+  height: 13px;
+  display: inline-block;
+}
+
+//测试中心，图片带有绿色的勾
+.img-with-greenActive{
+  position: relative;
+  margin: 0px auto 30px;
+  width: 90px;
+  cursor: pointer;
+  img{
+    margin: 0px auto;
+    display: block;
+  }
+  &.active:before{
+    font: normal normal normal 1.6rem/1 FontAwesome, sans-serif;
+    font-size: 22px;
+    content: "\F058";
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #3d960e;
+  }
+}
+//评论列表样式
+.comments-list {
+  padding: 10px 5px;
+  font-size: 15px;
+  border-top: 1px solid @colorBorderGray;
+  ul{
+    list-style: none;
+    li.comments-item{
+      margin-bottom: 5px;
+      .comments-item-bd{
+        padding: 0 0 0 40px;
+        position: relative;
+        .ui-avatar{
+          position: absolute;
+          left: 0;
+          top: 0;
+          img{
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+          }
+        }
+        .comments-content{
+          position: relative;
+          line-height: 1.5;
+          top:-3px;
+          left:5px;
+          .nickName{
+            color: @colorYellowStar;
+            text-decoration: none;
+            padding-right: 10px;
+            &.two{
+              padding-left: 10px;
+            }
+          }
+          .date{
+            color: #c3c5c7;
+            font-size: 14px;
+          }
+          .replyAndLike{
+            float: right;
+            padding-right: 10px;
+            color: @colorBlueClickLike;
+            font-size: 18px;
+            i{
+              cursor: pointer;
+              &:first-child{
+                padding-right: 10px;
+                border-right: 1px solid @colorBorderGray;
+              }
+              &:last-child{
+                padding:0px 10px;
+              }
+
+            }
+            &.active{
+              .fa-thumbs-o-up:before{
+                content: "\f164";
+                color: @colorBlueClickLike;
+              }
+            }
+
+          }
+          .mod-comments-sub{
+            padding: 4px 0 0;
+            ul li.comments-item {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+//
+.levelOneItem{
+  .comments-area{
+    opacity: 0;
+  }
+  &.active{
+    .comments-area{
+      opacity: 1;
+    }
+  }
+}
+//发表评论的框
+.comments-area{
+  .input-box{
+    height: 60px;
+    line-height: 20px;
+    padding: 3px 8px 5px;
+    background: none;
+    font-size: 14px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid #d9d9d9;
+    .borderRadius(6px);
+    line-height: 20px;
+    img{
+      display: inline-block;
+      vertical-align: -6px;
+      line-height: 1.23em;
+    }
+    &:focus {
+      border-color: #57c5f7;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(45, 183, 245, 0.2);
+    }
+  }
+  i{
+    color: @colorBlueClickLike;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+}
+
+//表情包样式
+.QQFace {
+  margin-top: 8px;
+  width: 430px;
+  background: #fff;
+  padding: 2px;
+  border: 1px #dfe6f6 solid;
+  table {
+    td {
+      padding: 0px;
+      img {
+        cursor: pointer;
+        border: 1px #fff solid;
+        &:hover {
+          border: 1px #0066cc solid;
+        }
+      }
+    }
+  }
+}
+
+//三列布局 左侧有tab
+.col3-withLeftTab-leftTab{
+  float: left;
+  width: @widthLeftMenu;
+  min-height: 100px;
+}
+.col3-withLeftTab-middleContext{
+  float: left;
+  padding: 0px 20px ;
+  width: 600px;
+  >div{
+    .block-box-shadow(9px,9px,9px,9px)
+  }
+}
+.col3-withLeftTab-rightPanel{
+  margin-left: @widthRightMenu;
+  >div{
+    .block-box-shadow(9px,9px,9px,9px)
+  }
+}
+
+//两列布局 右侧有tab
+.col2-withRightTab-leftSide{
+  float: left;
+  width: @width/6*4.5;
+}
+
+.col2-withRightTab-rightSide{
+  float: right;
+  width: @width/6*1.2;
+  padding: 0px 20px ;
+  >div{
+    .block-box-shadow(9px,9px,9px,9px)
+  }
+
+}
+
+//首页 最新动态
+.homepage-activitiesUL{
+  list-style: none;
+  li{
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &>.content{
+      margin-left: 85px;
+      .block-box-shadow(0px,0px,0px,0px);
+      .headPic{
+        position: absolute;
+        left: 0;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        .block-box-shadow(0px,0px,0px,0px);
+        img{
+          width: 80px;
+          height: 80px;
+          border: none;
+        }
+      }
+      .header{
+        padding: 12px 15px 0 15px;
+        margin-bottom: 11px;
+        min-height: 17px;
+        .rightIcon{
+          float: right;
+          line-height: 17px;
+          height: 17px;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+  }
+}
+//首页--最新动态--点击下三角箭头--出现框 举报、取消关注
+.popover-div-btn{
+  cursor: pointer;
+  line-height: 30px;
+  &:hover{
+    color: @colorBlueNormal;
+  }
+  &:first-child{
+    border-bottom: 1px solid #ddd;
+  }
+}
+//首页--右边菜单栏
+.homepage-navList-menu{
+  .block-box-shadow(0px,0px,0px,0px);
+  .header{
+    background-color: @colorBlueBack;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+  }
+  .menu{
+    padding: 20px 0px 20px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    &:hover{
+      color: #666;
+    }
+    img{
+      width: 50px;
+      padding-right: 10px;
+      float: left;
+    }
+  }
+
+}
+
+.fixed{
+  position: fixed;
+}
+.relative{
+  position: relative;
+}
+//左侧子菜单
+.fixed-nav-btnList{
+  width: @widthLeftMenu;
+  position: fixed;
+  top: 120px;
+  .block-box-shadow(9px,0px,9px,0px);
+  &.index-fixed{
+    li.active{
+      border-right: 3px solid @colorBlueClickLike;
+      color: inherit;
+      background-color: #cfd9e3;
+    }
+  }
+  li{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    a{
+      color: inherit;
+      display: block;
+      &:hover{
+        color: @colorBlueClickLike;
+      }
+      &.active{
+        border-right: 3px solid @colorBlueClickLike;
+        color: inherit;
+        background-color: #cfd9e3;
+      }
+    }
+  }
+  .ant-btn{
+    .borderRadius(0px);
+    margin: 10px 0px;
+    &:first-child{
+      margin-top: 60px;
+    }
+  }
+}
+
+//首页上面个人信息页面
+.homepage-userinfo{
+  .block-box-shadow(0px,0px,0px,0px);
+  height: 100px;
+  .left-info{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 50%;
+    float: left;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    .photo{
+      float: left;
+      height: 80px;
+      width: 80px;
+      padding: 0;
+      border: none;
+      img{
+        border-radius: 80px;
+        height: 80px;
+        width: 80px;
+      }
+    }
+    .info{
+      margin-left: 95px;
+      .name{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .class-num{
+        line-height: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+  .right-rank{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width:50%;
+    padding: 0 15px;
+    .rank{
+      height: 50px;
+      line-height: 50px;
+      &:first-child{
+        border-bottom: 1px solid #ddd;
+      }
+      .green{
+        color: @colorGreenSuccess;
+      }
+      .blue{
+        color: #105BB0;
+      }
+      .blueDuck{
+        color: #1056EB;
+      }
+    }
+  }
+}
+//个人页面 ---- 目标设定
+.targetSetSingle{
+  padding: 16px 16px 0px 69px;
+  position: relative;
+  border-radius: 6px;
+  margin: 20px;
+  line-height: 1.5;
+  position: relative;
+
+  i{
+    position: absolute;
+    left: 24px;
+    font-size: 29px;
+  }
+  .title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    .integral-tip{
+      font-size: 14px;
+      font-weight: normal;
+      float: right;
+    }
+  }
+}
+//textarea带有提交按钮
+.textarea-with-button{
+  border: 1px solid #d5f1fd;
+  background-color: #eaf8fe;
+  position: relative;
+  .ant-input{
+    font-size: 14px;
+    padding-bottom: 22px;
+  }
+  .btn-groups{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    .ant-btn{
+      border-radius: 0px;
+      &:last-child{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+//textarea 带有标题
+.textarea-with-title{
+  padding-bottom: 20px;
+  .title{
+    margin-bottom: 10px;
+    border-left: 6px solid @colorBlueBack;
+    span:first-child{
+      padding-left: 15px;
+    }
+    span:last-child{
+      float: right;
+    }
+  }
+}
+
+.title-on-textarea{
+  margin-bottom: 10px;
+  border-left: 6px solid @colorBlueBack;
+  span:first-child{
+    padding-left: 15px;
+  }
+  span:last-child{
+    float: right;
+  }
+}
+
+//目标设定大学图标太大
+.target-set .fa-university{
+  font-size: 24px;
+}
+//升学目标匹配
+.target-match-single{
+  padding: 20px;
+  .header-left{
+    float: left;
+    font-weight: bold;
+    i{
+      font-size: 20px;
+      padding-right:20px;
+    }
+  }
+  .header-right{
+    float: right;
+    .ant-input-wrapper{
+      display: inline-block;
+      padding-right: 10px;
+    }
+  }
+}
+//最近来访
+.latest-visitor-ul{
+  li{
+    padding-left: 69px;
+    position: relative;
+    line-height: 60px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+      color: #666;
+    }
+    img{
+      position: absolute;
+      top:0px;
+      left: 0px;
+      width: 50px;
+      height: 50px;
+      .borderRadius(4px)
+    }
+  }
+}
+
+//我的关注---头像+姓名+班级 的box
+.myFollow-box{
+  height: 100px;
+  .block-box-shadow(10px, 15px ,15px ,99px);
+  position: relative;
+  margin: 0px 5px 10px;
+  img{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 70px;
+  }
+  .name-div{
+    .rightinfo{
+      float: right;
+      cursor: pointer;
+      font-size: 14px;
+      &:hover{
+        color: #666;
+      }
+      i{
+        font-size: 18px;
+      }
+    }
+  }
+}
+.popver-width .ant-popover-inner{
+  min-width: inherit;
+}
+//综合素质档案---带颜色框的按钮
+.comprehensive-box-single{
+
+  text-align: center;
+  img{
+    width: 80%;
+  }
+  .text-btn{
+    margin-top: 20px;
+    .borderRadius(6px);
+    border: 1px solid;
+    width: 80%;
+    margin: 10px auto;
+    line-height: 40px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &.blueLight{
+      border-color:#6DB0F2 ;
+      background-color:#6DB0F2 ;
+      &:hover{
+        background-color: #79ACF2;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(45, 183, 245, 0.2);
+      }
+    }
+    &.blueNormal{
+      border-color: #678FF5;
+      background-color:#678FF5 ;
+      &:hover{
+        background-color: #7294F5;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(45, 183, 245, 0.2);
+      }
+    }
+    &.blueGrey{
+      border-color: #97B0CC;
+      background-color:#97B0CC ;
+      &:hover{
+        background-color: #a1b7cc;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba(45, 183, 245, 0.2);
+      }
+    }
+  }
+
+
+
+
+}
+//学业成绩table
+.score-with-item{
+  border: 1px solid;
+  border-radius: 2px;
+  li{
+    border-right: 1px solid;
+    line-height: 30px;
+    text-align: center;
+    &:last-child{
+      border-right: 0px;
+    }
+    >div:first-child{
+      border-bottom: 1px solid;
+    }
+  }
+}
+//个人页面---学科兴趣排名
+.subject-interest-rank{
+  padding: 20px;
+  li{
+    padding: 0px 10px;
+    .rankName{
+      font-weight: bold;
+      text-align: center;
+      color:#ffa800 ;
+    }
+    .cylinder-color{
+      height: 120px;
+      border: 1px dashed #ccc;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .rank-height-cylinder{
+      width: 100%;
+      background: #ffa800;
+      bottom: 0;
+      position: absolute;
+    }
+    .subject-name{
+      text-align: center;
+    }
+  }
+}
+//个人页面---学科能力排名
+.subject-ability-rank{
+  padding: 20px;
+  li{
+    padding: 0px 10px;
+    .rankName{
+      font-weight: bold;
+      text-align: center;
+      color:#3b8fdf ;
+    }
+    .cylinder-color{
+      height: 120px;
+      background: url("@{imgURL}greyLine.jpg") center top repeat-y;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .rank-height-cylinder{
+      height: 20px;
+      line-height: 20px;
+      background: #3b8fdf;
+      color: #fff;
+      .borderRadius(3px);
+      text-align: center;
+      position: absolute;
+      width: 100%;
+    }
+    .subject-name{
+      text-align: center;
+      margin-top: 5px;
+    }
+  }
+}
+//选科未完成
+.non-choose-subject{
+  padding: 20px 20px 0px;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  img{
+    width: 120px;
+  }
+  .text{
+    font-weight: bold;
+    padding-left: 10px;
+  }
+}
+//个人主页  综合素质记录八项 form
+.comprehensive-form{
+  padding-top: 0px!important;
+  box-shadow: none!important;
+
+  .delete-line{
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+  }
+}
+//上传图片
+/* 配合样式可以做出上传按钮和示例效果 */
+.ant-upload-select-picture-card {
+  i{
+    font-size: 28px;
+    color: #999;
+  }
+  .ant-upload-text {
+    font-size: 14px;
+    color: #666;
+  }
+}
+/* 选择选修课名称，弹出modal  显示所属类别  课程学分*/
+.elective-course-modal-text{
+  margin-top: 20px;
+  font-size: 14px;
+  color: red;
+}

@@ -1,0 +1,132 @@
+@import "commonStyle";
+@colorBeginBackGround:#69B5FA;
+@colorActiveNormal:#CDCCD3;
+@colorActiveSpecial:#F76F11;
+//互评星星总的div
+.ClassMateEvaluateList{
+  /*margin-top: 25px;
+  padding-top: 40px;*/
+}
+
+//星星文字的父div
+.ClassMateEvaluateListStarDiv{
+  position: relative;
+  margin-left: 39px;
+}
+//互评系统的文字
+.ClassMateEvaluateListStarWords{
+  margin-bottom: 5px;
+  font-weight: 700;
+  width:32px;
+  //background-color: blue;
+}
+//互评系统的星星
+.ClassMateEvaluateListStarDiv >.ant-rate {
+  position: absolute;
+  margin-left: 49px;
+  margin-top: -43px;
+  clear: both;
+}
+
+.ClassMateEvaluateListStarButton{
+  width: 110px;
+  margin-left: 75px;
+  margin-bottom: 10px;
+}
+
+//头像的边框
+  .ClassMateEvaluateListActiveNormal,.ClassMateEvaluateListActiveSpecial{
+    position: relative;
+    cursor: pointer;
+    float: left;
+    padding:8px 4px 6px 4px  ;
+    &.isFinished:before{
+      font: normal normal normal 1.6rem/1 FontAwesome, sans-serif;
+      font-size: 22px;
+      content: "\F058";
+      position: absolute;
+      right: 0px;
+      bottom: 22px;
+      color: #3d960e;
+    }
+    .name{
+      text-align: center;
+    }
+    img{
+      border: 3px solid  #CDCCD3;
+    }
+    &:hover{
+      img{
+        border-color: @colorActiveSpecial;
+      }
+    }
+
+  }
+  .ClassMateEvaluateListActiveSpecial{
+    color:@colorActiveSpecial;
+    img{
+      border-color: @colorActiveSpecial;
+    }
+  }
+//评价时，当前项显示小三角
+.current-row-eva{
+  [class*="col-8"]{
+    border-bottom: 2px solid @colorBorderGray;
+  }
+  .ClassMateEvaluateListActiveSpecial:after{
+    font: normal normal normal 16px/1 FontAwesome, sans-serif;
+    content: "\f077";
+    position: absolute;
+    left: 40%;
+    bottom: -5px;
+    color: @colorBorderGray;
+    background-color: #ffffff;
+  }
+}
+
+//同学互评--说明文字css
+.student-evaluation-desc{
+  margin: 20px 0px 20px;
+  .blue-title{
+    font-weight: bold;
+    color: @colorBlueBack;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+}
+
+//两列布局中 左侧导航tab
+.row2-withUpNameCard-upperRow{
+  margin: 20px 10px;
+}
+.row2-withUpNameCard-lowerRow{
+  margin: 0px 10px 20px;
+}
+
+//积分成长记录---echarts
+.score-grown-record-chart{
+  height: 500px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #e3e3e3;
+ .borderRadius(4px);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+//月度总结--班主任评语
+.teacher-comments-box{
+  min-height: 150px;
+  border: 1px solid #aaaaaa;
+  margin: 15px 0px 10px;
+ .borderRadius(6px);
+  text-align: center;
+  display: table;
+  width: 100%;
+  .sub-div{
+    vertical-align: middle;
+    display: table-cell;
+  }
+}

@@ -1,0 +1,137 @@
+//color
+@colorBlueNormal:#117ec2;
+@colorBlueLowNormal:#207ffa;
+@colorBlueBack:#2774b8;
+@colorBlueLiked:#0866a8;
+@colorRedYellow:#e87523;
+@colorYellow:#e39827;
+@colorYellowStar:#f28507;
+@colorGreenSuccess:#3d960e;
+//个人页面--综合素质记录--八个Part的颜色
+@colorGreenBack: #519e0b;
+@colorPurpleBack:#C480BA;
+@colorYellowBack:#BFB32E;
+@colorBlueDarkDarkBack:#2B4CB5;
+@colorOrangeBack:#D98B25;
+@colorGreenBLueBack:#2BABAB;
+@colorRedDuckBack:#CC4747;
+//
+@colorBorderGray:#aaaaaa;
+@colorFontsDefault:#050505;
+@colorBlueTableLine:#5B9BD5;
+@colorBlueClickLike:#6db0f2;
+// border-radius 圆角半径
+.borderRadius(@radius) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+//border-radius 四角半径
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomright: 5px, @bottomleft: 5px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+//块级元素的box-shadow
+.block-box-shadow(@topleft: 9px, @topright: 9px, @bottomright:9px, @bottomleft: 9px){
+  background-color:#ffffff ;
+  padding: @topleft @topright @bottomright @bottomleft;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15),-1px 0 0 rgba(0,0,0,0.03),1px 0 0 rgba(0,0,0,0.03),0 1px 0 rgba(0,0,0,0.12);
+}
+
+//imgurl
+@imgURL:'/Nicezhuanye/social/vendor/images/';
+//链接 a
+a.redLink {
+  color: #d9534f;
+  text-decoration: none;
+  &:hover {// 有 & 时解析的是同一个元素或此元素的伪类，没有 & 解析是后代元素
+    color: #d9534f;
+    text-decoration: underline;
+  }
+}
+a.blackLink{
+  color: @colorFontsDefault;
+  text-decoration: none;
+  &:hover {// 有 & 时解析的是同一个元素或此元素的伪类，没有 & 解析是后代元素
+    color:@colorFontsDefault;
+    text-decoration: underline;
+  }
+}
+
+.block-box-shadows{
+  .block-box-shadow(9px,9px,9px,9px)
+}
+.block-box-shadows-0{
+  .block-box-shadow(0px,0px,0px,0px)
+}
+// 公用的按钮
+.btn-blue,.btn-blue:hover,.btn-blue:focus,.btn-blue:active{
+  color: #fff;
+  background-color: @colorBlueBack;
+  border-color: @colorBlueBack
+}
+.btn-grey,.btn-grey:hover,.btn-grey:focus,.btn-grey:active{
+  color: inherit;
+  background-color: #C3C5C7;
+  border-color: #d9d9d9;
+}
+.btn-greyLight,.btn-greyLight:hover,.btn-greyLight:focus,.btn-greyLight:active{
+  color: #666;
+  background-color: #f7f7f7;
+  border-color: #d9d9d9;
+}
+.btn-yellow,.btn-yellow:hover,.btn-yellow:focus,.btn-yellow:active{
+  color: #fff;
+  background-color: #E7B402;
+  border-color: #E7B402
+}
+.btn-orange,.btn-orange:hover,.btn-orange:focus,.btn-orange:active{
+  color: #fff;
+  background-color: #E97E06;
+  border-color: #E97E06
+}
+.btn-green,.btn-green:hover,.btn-green:focus,.btn-green:active{
+  color: #fff;
+  background-color: #1AAF5E;
+  border-color: #1AAF5E
+}
+.btn-red,.btn-red:hover,.btn-red:focus,.btn-red:active{
+  color: #fff;
+  background-color: #d9534f ;
+  border-color: #d9534f
+}
+//公用的宽度
+@width:1000px;
+@widthLeftMenu:120px;
+@widthRightMenu:720px;
+
+.width20percent{
+  width: 20%;
+}
+//header固定
+.header-affix .ant-affix{
+  right: 0px;
+}
+
+//垂直居中 加在父类中 第一级子类有作用效果
+.vertical-center{
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+
+}
+//垂直水平居中 加在父类中 第一级子类有作用效果
+.vertical-horizon-center{
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+//display-box[盒子模型，子元素等高]
+.display-box{
+  display:-moz-box;
+  display:-webkit-box;
+}

@@ -1,0 +1,272 @@
+@import "commonStyle";
+@import "MIAssess";
+@import "jobLib";
+@import "homePage";
+@import "majorLib";
+@import "collegeLib";
+@import "termAnalysis";
+@import "RankState";
+@import "comprehensiveQualityReport";
+@import "adminPage";
+@import "teacherPersonalPage";
+
+//body样式
+body {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  line-height: 1.5;
+  color: #050505;
+  background-color: #e7e9ec;
+}
+pre　{
+  white-space:pre-wrap;
+  white-space:-moz-pre-wrap;
+  white-space:-o-pre-wrap;
+  word-wrap:break-word;
+  font-family: "Microsoft YaHei";
+}
+//main layout
+.main-wrapper{
+  width: @width;
+  margin: 0 auto;
+  /*overflow: hidden;*/
+  position: relative;
+}
+.main-header{
+  background: url("../../vendor/images/bgblue.jpg");
+  background:#2774b8;
+  background-size: 100%;
+  height: 49px;
+  line-height: 49px;
+  color: #ffffff;
+  font-size: 24px;
+  .title{
+    width: @width;
+    margin: 0px auto;
+    .ant-badge{
+      cursor: pointer;
+      padding-top: 5px;
+      &:hover{
+        background-color: @colorBlueBack;
+      }
+      &:not(:last-child){
+        margin-right: 30px;
+        padding: 3px 5px;
+        background: #fff;
+        color: initial;
+      }
+      img{
+        width: 34px;
+        height: 34px;
+      }
+
+    }
+  }
+}
+.main-container{
+  clear: both;
+  padding-top: 15px;
+  >.row>div:last-child {
+    padding-left: 15px;
+  }
+}
+
+//左侧带有tab的最大页面布局
+.main-container-withLeftTab{
+  padding: 20px 0px;
+  clear: both;
+}
+
+//灰色header样式
+.header-gray{
+  background-color: #78909c;
+  border: 1px solid #546e7a;
+  height: 40px;
+  line-height: 40px;
+  color: #ffffff;
+  font-size: 16px;
+  .nav-bar{
+    width: @width;
+    margin: 0px auto;
+    li{
+      cursor: pointer;
+      a{
+        color: #ffffff;
+        i{
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+}
+//header里面的搜索框
+.header-search-group{
+  width: 300px;
+  height: 30px;
+  background: #cccccc;
+  font-size: 14px;
+  color: #888888;
+  border: 1px solid #bbbbbb;
+  position: relative;
+  float:left;
+  margin: 10px 0 10px 60px;
+  input{
+    width: 96%;
+    height: 22px;
+    line-height: 22px;
+    .borderRadius(5px);
+    background: #ffffff;
+    border: none;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    padding-left: 25px;
+  }
+  i{
+    position: absolute;
+    top: 8px;
+    left: 12px;
+  }
+}
+//专业库--maincontainer搜索
+.search-major-box{
+  height: 60px;
+  line-height: 60px;
+  background: #D4D7D9;
+  padding: 0px 20px;
+ /* border: 1px solid @colorBorderGray;*/
+}
+//桔色搜索框
+.search-box-orange {
+  width: 250px;
+  height: 40px;
+  background: #cccccc;
+  font-size: 14px;
+  color: #888888;
+  border: 1px solid #bbbbbb;
+  position: relative;
+  float:left;
+  margin: 10px 0px 10px 8px;
+  input {
+    width: 170px;
+    height: 32px;
+    line-height: 22px;
+    background: #ffffff;
+    border: none;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    padding-left: 25px;
+    &:focus {
+      outline: 0;
+      background: #fff;
+    }
+  }
+  i{
+    position: absolute;
+    top:14px;
+    left: 12px;
+  }
+  button {
+    top: 3px;
+    overflow: visible;
+    position: absolute;
+    left: 176px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 32px;
+    width: 68px;
+    font: normal 16px/32px '';
+    color: #fff;
+    text-transform: uppercase;
+    background: #e39827;
+    .border-radius-custom(0px, 3px, 3px, 0px);
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    font-family: "Microsoft YaHei";
+    &:before { /* left arrow */
+      content: '';
+      position: absolute;
+      border-width: 8px 8px 8px 0;
+      border-style: solid solid solid none;
+      border-color: transparent #e39827 transparent;
+      top: 9px;
+      left: -6px;
+    }
+  }
+}
+//蓝色底header---右边消息提醒--hover头像时，弹出框样式
+.header-hover-message{
+  li{
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    padding: 0px 20px;
+    &:hover{
+      color: @colorBlueNormal;
+    }
+    &:last-child{
+      border-top: 1px dashed @colorBorderGray;
+    }
+  }
+}
+
+//桔色搜索框
+.head-search-box-orange {
+  width: 300px;
+  height: 32px;
+  background: #cccccc;
+  font-size: 14px;
+  color: #888888;
+  border: 1px solid #bbbbbb;
+  position: relative;
+  float:left;
+  margin: 10px 0px 10px 8px;
+  input {
+    width: 230px;
+    height: 28px;
+    line-height: 22px;
+    background: #ffffff;
+    border: none;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    padding-left: 25px;
+    &:focus {
+      outline: 0;
+      background: #fff;
+    }
+  }
+  i{
+    position: absolute;
+    top:11px;
+    left: 12px;
+  }
+  button {
+    top: 1px;
+    overflow: visible;
+    position: absolute;
+    left: 232px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 28px;
+    width: 65px;
+    font: normal 16px/32px '';
+    color: #fff;
+    text-transform: uppercase;
+    background: #e39827;
+    .border-radius-custom(0px, 3px, 3px, 0px);
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    font-family: "Microsoft YaHei";
+    &:before { /* left arrow */
+      content: '';
+      position: absolute;
+      border-width: 8px 8px 8px 0;
+      border-style: solid solid solid none;
+      border-color: transparent #e39827 transparent;
+      top: 9px;
+      left: -6px;
+    }
+  }
+}

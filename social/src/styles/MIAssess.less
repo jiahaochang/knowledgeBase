@@ -1,0 +1,285 @@
+@import "commonStyle";
+
+@colorBlueTableLine:#5B9BD5;
+@colorBeginBackGround:#69B5FA;
+.MIGuideTitle {
+  width:75%;
+  height: 80px;
+  line-height: 80px;
+  margin: 0 auto;
+  border: 2px solid @colorBlueBack;
+  background: #ffffff;
+  .borderRadius(5px);
+  color: @colorBlueNormal;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  img{
+    width: 70px;
+    vertical-align: middle;
+  }
+
+}
+
+//开始测试按钮
+.MIGuideButton, .MIGuideButton:hover, .MIGuideButton:focus, .MIGuideButton:active{
+  margin-left: 45%;
+  margin-top: 120px;
+  border: none;
+  color:white;
+  background-color: @colorBeginBackGround;
+}
+
+//多元智能的上一题下一题按钮
+.MIAssess-btn-last{
+  color:@colorBlueTableLine;
+  border: none;
+  font-weight:800;
+}
+.MIAssess-btn-next{
+  margin-left: 932px;
+  color:@colorBlueTableLine;
+  border: none;
+  font-weight:800;
+}
+//多元智能的提交按钮
+.MIAssess-btn-submit, .MIAssess-btn-submit:hover, .MIAssess-btn-submit:focus, .MIAssess-btn-submit:active{
+  margin-left: 40%;
+  border: none;
+  color:white;
+  background-color: @colorYellowStar;
+}
+
+//多元智能的选择题
+.MIAssess-questionAndAnswer{
+  width:40%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.MIAssess-currentPageNum{
+  float:left;
+}
+
+.MIAssess-questionAndAnswerList{
+  margin: 0 auto;
+  margin-bottom: 100px;
+  //background-color: #B9B9B9;
+}
+//多元智能选中的状态
+.MIAssess-questionAndAnswerList-div-active{
+  text-align: center;
+  background-color: #B9B9B9;
+}
+.MIAssess-questionAndAnswerList-div{
+  text-align: center;
+}
+
+.MIAssess-questionAndAnswerList-input{
+  margin-top:2px;
+}
+
+.value-test-card{
+  margin: 0 16px;
+  border: 6px solid grey;
+  height: 240px;
+  border-radius: 10px;
+  padding: 40px 20px;
+}
+
+.holland-score-title{
+  width: 80%;
+  margin: 0px auto;
+}
+//多元智能结果
+.MIAssess-result-advantage-title{
+  color: @colorBlueNormal;
+  font-weight: bold;
+  font-size: 18px;
+}
+.MIAssess-result-table{
+  border: 1px solid #6b656b;
+  min-height: 200px;
+  .title{
+    border-right: 1px solid #6b656b;
+    font-size: 18px;
+    font-weight: bold;
+    width: 18%;
+    text-align: center;
+  }
+  .content{
+    padding:5px;
+    .detail{
+      margin-bottom: 10px;
+      .detail-title{
+        color: #4a79b5;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+  &.orange{
+    .title{
+      color: #fb8c00;
+    }
+  }
+  &.blue{
+    .title{
+      color:#144382;
+    }
+  }
+}
+
+//价值观结果
+.values-top-border{
+  border-top: 1px dotted #aaaaaa;
+  padding-top: 15px;
+}
+.MIAssess-score-tips{
+  color: #db7f23;
+  text-align: center;
+  i{
+    color: #ff9800;
+    padding-right: 10px;
+    font-size: 18px;
+  }
+}
+
+/** 职业性格测试结果温度计样式*/
+.jobPersonalStyle{
+  border-top: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 16px 5px 10px;
+  margin-top: 25px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.progress-my{
+  width: 100%;
+  height: 6px;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+}
+.progress-my-span{
+  color: #144877;
+  float: left;
+  width: 40px;
+}
+
+.progress-div-typeDouble{
+  padding-right: 5px;
+  padding-left: 5px;
+  /*width: 250px;*/
+  float: left;
+  position: relative;
+}
+
+.progress-div-typeDouble-circle{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #DEDEDE;
+  background: #f6f6f6;
+  margin-top: 6px;
+  float: left;
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+.progress-div-typeDouble-div{
+  /*width: 114px;*/
+  height: 6px;
+  border: 1px solid #D1D1D1;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  float: left;
+  position: relative;
+}
+.progress-div-typeDouble-div-left{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.progress-div-typeDouble-div-right{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.progress-div-typeDouble-div-left-active{
+  background: #ffffff;
+  position: absolute;
+  /*width: 20%;*/
+  height: 4px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.progress-div-typeDouble-div-right-active{
+  background: #FF9800;
+  position: absolute;
+  /*width: 2%;*/
+  height: 4px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.progress-my-circle{
+  position: absolute;
+  left: 48%;
+  width: 12px;
+  height: 12px;
+  border-radius: 5px;
+  border: 1px solid #DEDEDE;
+  background: #FFFFFF;
+  margin-top: -4px;
+
+}
+.progress-my-left-active{
+  background: #FF9800;
+  position: absolute;
+  /*width: 50%;*/
+  height: 4px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  left: 0%;
+}
+.progress-my-right-active{
+  background: #FF9800;
+  position: absolute;
+  /*width: 50%;*/
+  height: 4px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: 50%;
+}
+/** 双轴线下面的刻度表*/
+.progress-typeDouble-div-scale{
+  margin: 5px 45px;
+  border-bottom: 1px solid #FF9800;
+  position: relative;
+  border-left: 1px solid #FF9800;
+  border-right: 1px solid #FF9800;
+  height: 12px;
+}
+.progress-typeDouble-div-width-scale{
+  height: 12px;
+  position: absolute;
+  left: 0px;
+  width: 16%;
+  border-right: 1px solid #FF9800;
+  &:last-child{
+    border-right:none;
+  }
+}
+
+.progress-typeDouble-div-width-span-scale{
+  position: absolute;
+  top: -7px;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}

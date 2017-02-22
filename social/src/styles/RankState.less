@@ -1,0 +1,99 @@
+@colorBlueLightBack:#6DB0F2;
+@colorGreen: #15a70b;
+@colorBlueDuck:#105BB0;
+@colorYellow:#F7A01E;
+@import "commonStyle";
+
+.RankStateDiv{
+  .ant-select{
+    width: 100%;
+    .ant-select-selection {
+      background-color: @colorBlueLightBack;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+}
+
+.RankStateSingle{
+  margin: 13px 40px 0px;
+  cursor: pointer;
+  line-height: 31px;
+  &.yellow{
+    .count{
+      color: @colorYellow;
+    }
+  }
+  &.green{
+    .count{
+      color: @colorGreen;
+    }
+  }
+  &.blueDuck{
+    .count{
+      color: @colorBlueDuck;
+    }
+  }
+  &:last-child{
+    .count{
+      padding-right: 27.85px;
+    }
+  }
+  .count{
+    font-weight: bold;
+    float: right;
+    font-size: 18px;
+    i{
+      padding-left: 15px;
+    }
+  }
+
+}
+
+//班主任rank state
+.teacher-rank-state{
+  .statistics-single{
+    line-height: 70px!important;
+    font-size: 20px;
+    padding: 0px 20px;
+  }
+
+}
+
+//同学印象
+.impression-text{
+  font-weight: bold;
+  font-size: 20px;
+  &.blue{
+    color: @colorBlueNormal;
+  }
+  &.gray{
+    color: #666C70;
+  }
+}
+.impression-div{
+  .circle{
+    margin: 15px auto;
+    cursor: pointer;
+    &:hover{
+      background-color: #4F94C2;
+      color: #ffffff;
+    }
+    &.small{
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      margin: 5px auto;
+    }
+  }
+}
+
+.impressions-checkbox-group{
+  .ant-checkbox-group-item{
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .ant-checkbox-wrapper + .ant-checkbox-wrapper{
+    margin-left: 0px;
+  }
+}

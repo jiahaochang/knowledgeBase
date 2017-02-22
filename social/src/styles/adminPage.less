@@ -1,0 +1,206 @@
+@import "commonStyle";
+/*  管理员样式 */
+//个人信息+统计结果
+.right-info{
+  padding: 10px 10px 10px 160px;
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  img{
+    width: 140px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .name{
+    font-size: 20px;
+    .right-credit{
+      color: #969a9e;
+      font-weight: bold;
+      float: right;
+    }
+  }
+  .number-sign{
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  .good-friend-count{
+    font-weight: bold;
+    color: #0e47b0;
+    font-size: 16px;
+  }
+}
+
+.left-statistics{
+  .title{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid @colorBorderGray;
+    color: @colorBlueLiked;
+  }
+  .statistics-single{
+    line-height: 50px;
+    .rightCount{
+      float: right;
+      font-weight: bold;
+      font-size: 20px;
+      &.green{
+        color: @colorGreenSuccess;
+      }
+      &.blue{
+        color: #10579E;
+      }
+    }
+  }
+}
+
+//筛选结果的搜索框
+.search-box-table{
+  .search-input{
+    width: 70%;
+    height: 32px;
+    background: #cccccc;
+    font-size: 14px;
+    color: #888888;
+    border: 1px solid #bbbbbb;
+    position: relative;
+    float:left;
+    input{
+      width: 96%;
+      height: 22px;
+      line-height: 22px;
+      .borderRadius(5px);
+      background: #ffffff;
+      border: none;
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      padding-left: 25px;
+    }
+    i{
+      position: absolute;
+      top: 8px;
+      left: 12px;
+    }
+  }
+  .ant-btn{
+    height: 32px;
+    .borderRadius(0px);
+  }
+}
+//蓝色边框table
+/** blue table has border*/
+.admin-table{
+  .ant-table {
+    font-size: 14px;
+    color: inherit;
+    th {
+      background: @colorBlueTableLine;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+      border-right: 0px!important;
+    }
+    .ant-table-tbody tr{
+      text-align: center;
+      &:nth-child(odd){
+        background: #DBE9F6;
+      }
+      td{
+        padding: 5px;
+        border-bottom: 1px solid #9DC3E6!important;
+        &:not(:last-child){
+          border-right: 1px solid #DDDCDB!important;
+        }
+      }
+    }
+  }
+  table{
+    border: 1px solid #9DC3E6!important;
+    border-bottom: 0px !important;
+    border-left: 1px solid #dedede!important;
+  }
+  .ant-pagination-item-active{
+    background-color: @colorBlueBack;
+    border-color: @colorBlueBack;
+  }
+  .ant-btn i{
+    font-size: 16px;
+    padding-left: 5px;
+  }
+}
+//info提醒
+.download-info{
+  padding-left: 0px;
+  font-size: 14px;
+  i{
+    font-size: 18px;
+  }
+}
+//学生描述用语关键词---col2table
+.col2-table-ul{
+  margin: 30px;
+  overflow: hidden;
+  .school-score-single{
+    li{
+      padding: 5px 2px;
+    }
+    ul:nth-child(even){
+      background-color: #DBE9F6;
+    }
+  }
+  .ant-pagination{
+    margin: 16px 0;
+    float: right;
+    .ant-pagination-item-active{
+      background-color: @colorBlueBack;
+      border-color:@colorBlueBack;
+    }
+    .ant-pagination-item:hover{
+      color: @colorBlueBack;
+      border-color:@colorBlueBack;
+    }
+  }
+}
+//年级 班级  筛选条件
+.grade-class-filter{
+  margin-bottom: 30px;
+  dl{
+    padding: 10px 0 8px 70px;
+    overflow: hidden;
+    zoom: 1;
+    dt{
+      float: left;
+      text-indent: 6px;
+      margin-left: -70px;
+    }
+    dd{
+      padding-left: 55px;
+      span{
+        margin: 0 15px 2px 0;
+        white-space: nowrap;
+        line-height: 25px;
+        float: left;
+        &.active a,&.active a:hover{
+          color: @colorRedYellow;
+        }
+        a{
+          color:inherit;
+          padding: 1px 6px;
+          float: left;
+          &:hover{
+            color: @colorBlueNormal;
+          }
+        }
+        &.all{
+          width: 55px;
+          margin: 0 0 0 -55px;
+        }
+      }
+    }
+  }
+
+}

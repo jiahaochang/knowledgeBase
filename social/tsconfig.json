@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "jsx": "react",
+
+    "allowUnreachableCode": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "pretty": true,
+    "reactNamespace": "React"
+  },
+  "exclude": [
+    "node_modules",
+    "typings",
+    "dist"
+  ]
+
+}
