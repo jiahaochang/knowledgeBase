@@ -82,7 +82,7 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
             var majorTypeID = item.majorTypeID;
             if(majorTypeName.indexOf("本科")>-1){
                 undergraduateID = majorTypeID;
-            }else if(majorTypeName.indexOf("专科")>-1){
+            }else if(majorTypeName.indexOf("高职")>-1){
                 specialtyID = majorTypeID;
             }
         }
