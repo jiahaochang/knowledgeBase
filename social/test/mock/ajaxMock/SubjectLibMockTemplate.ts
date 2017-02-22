@@ -12,7 +12,7 @@ subjectLibMockTemplateTemp[subjectLibActionTypes.INIT_SUBJLIB_CURRENTSUBJ] = {
                 references: [
                     {
                         referenceID:"",
-                        referenceKey: "学科特点",
+                        referenceKey: "书籍内容",
                         referenceValue: "学科特点-语文"
                     },
                     {
