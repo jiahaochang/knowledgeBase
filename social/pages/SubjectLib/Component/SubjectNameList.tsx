@@ -30,7 +30,7 @@ class SubjectNameList extends React.Component<SubjectNameListProps, {}> {
         }
         return(
             <div className="profession-screen-single am-cf block-box-shadows">
-                <h3 className="profession-screen-title">高考学科</h3>
+                <h3 className="profession-screen-title">医案名称</h3>
                 <ul className="profession-screen-content am-cf">
                 {
                     subjectNameList.map(function(item,index){
