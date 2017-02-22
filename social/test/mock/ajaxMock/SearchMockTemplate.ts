@@ -14,7 +14,7 @@ searchMockTemplateTemp[searchActionTypes.GET_SEARCH_PERSONALINFOLIST] = {
         searchResult:[
             {
                 userID:"004",
-                name:"家浩",
+                name:"家浩厉害",
 
                 headImage:"vendor/images/default-headpic.jpg",
                 classID:"001",
