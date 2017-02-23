@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Row, Col,Icon } from 'antd';
 import CardTitleWithLine = require('../../../common/Component/CardTitleWithLine');
-import  JobIntroSinglePart = require('./JobIntroSinglePart');
+import  PrescriptionIntroSinglePart = require('./PrescriptionIntroSinglePart');
 import {removeRepeatObjectElementInArray} from 'common/commonFunc'
 "use strict";
 
@@ -131,7 +131,7 @@ class JobOptionsML extends React.Component<JobOptionsMLProps, JobOptionsMLState>
                     <CardTitleWithLine title="方剂介绍"/>
                     {
                         subJobCategoryID &&
-                        <JobIntroSinglePart subJobCategoryID={subJobCategoryID}/>
+                        <PrescriptionIntroSinglePart subJobCategoryID={subJobCategoryID}/>
                     }
                 </div>
             </div>
