@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import SearchBox = require('../../common/Component/SearchBox');
 import  PrescriptionTypeOptions = require('./Component/PrescriptionTypeOptions');
-import  JobOptionsSubcategories = require('./Component/JobOptionsSubcategories');
+import  PrescriptionTypeOptionsSubcategories = require('./Component/PrescriptionTypeOptionsSubcategories');
 "use strict";
 
 import {getDataByActionID} from '../../common/ajaxUtil'
@@ -73,7 +73,7 @@ class JobLib extends React.Component<JobLibProps, JobLibRouteState> {
                             <div className="block-box-shadows">
                                 <SearchBox  title="输入方剂关键词"  searchCallBack={this.searchWithInput} rightContent={[jobCount]} rightTextCallBack={this.rightSearch.bind(this)} />
                             </div>
-                            <JobOptionsSubcategories  searchKeyWord={this.state.searchKeyWord} currentSubJobCategoryID={this.state.currentSubJobCategoryID} refreshCurrentSubJobCategoryID={this.refreshCurrentSubJobCategoryID.bind(this)}/>
+                            <PrescriptionTypeOptionsSubcategories  searchKeyWord={this.state.searchKeyWord} currentSubJobCategoryID={this.state.currentSubJobCategoryID} refreshCurrentSubJobCategoryID={this.refreshCurrentSubJobCategoryID.bind(this)}/>
                         </div>
                     </Col>
                     <Col span={7}>
