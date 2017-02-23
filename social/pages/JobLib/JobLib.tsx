@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import SearchBox = require('../../common/Component/SearchBox');
-import  JobOptions = require('./Component/JobOptions');
+import  PrescriptionTypeOptions = require('./Component/PrescriptionTypeOptions');
 import  JobOptionsSubcategories = require('./Component/JobOptionsSubcategories');
 "use strict";
 
@@ -77,7 +77,7 @@ class JobLib extends React.Component<JobLibProps, JobLibRouteState> {
                         </div>
                     </Col>
                     <Col span={7}>
-                        <JobOptions jobCategoryOptions={jobCategory} searchKeyWord={this.state.searchKeyWord} handleSearchWithInput={this.searchWithInput.bind(this)} />
+                        <PrescriptionTypeOptions jobCategoryOptions={jobCategory} searchKeyWord={this.state.searchKeyWord} handleSearchWithInput={this.searchWithInput.bind(this)} />
                     </Col>
                 </Row>
             </div>
