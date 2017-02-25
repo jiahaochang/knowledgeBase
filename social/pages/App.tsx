@@ -131,7 +131,7 @@ class App extends React.Component<AppProps,AppState>{
                     <div className="main-header">
                         <div className="title">
                             <span className="pull-left">中医知识库系统</span>
-                            <HeadSearchBox  title="输入专业关键词" searchCallBack={this.searchWithInput} />
+                            {/*<HeadSearchBox  title="输入专业关键词" searchCallBack={this.searchWithInput} />*/}
                             <div className="pull-right">
                                 <Badge count={this.state.alertCount}>
                                     <Popover content={this.state.alertContent} trigger={"click"} overlayClassName="popver-width" onVisibleChange={this.onAlertVisibleChange}>
