@@ -83,7 +83,7 @@ const rootRoute = {
             require('../pages/AssessCenter/MIAssess/RouteMIQuiz'),
             require('../pages/AssessCenter/ValueAssess/RouteValueQuiz'),
 
-            require('../pages/SchoolStar/RouteSchoolStar'),
+            require('../pages/TestCenter/RouteMIQuiz'),
 
             require('../pages/Notification/RouteNotification'),
         ]

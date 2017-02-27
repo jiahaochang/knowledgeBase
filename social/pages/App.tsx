@@ -124,6 +124,7 @@ class App extends React.Component<AppProps,AppState>{
         );
 
         var defaultHomePageUrl = "/homePage";//首页特殊，不同角色不同首页
+        var assessCenterUrl = "/assessCenter/HollandAssess";
         var links = this.state.links;
         return (
             <div className="header-affix">
@@ -131,7 +132,8 @@ class App extends React.Component<AppProps,AppState>{
                     <div className="main-header">
                         <div className="title">
                             <span className="pull-left">中医知识库系统</span>
-                            {/*<HeadSearchBox  title="输入专业关键词" searchCallBack={this.searchWithInput} />*/}
+                            {/*
+                            <HeadSearchBox  title="输入专业关键词" searchCallBack={this.searchWithInput} />
                             <div className="pull-right">
                                 <Badge count={this.state.alertCount}>
                                     <Popover content={this.state.alertContent} trigger={"click"} overlayClassName="popver-width" onVisibleChange={this.onAlertVisibleChange}>
@@ -147,6 +149,7 @@ class App extends React.Component<AppProps,AppState>{
                                     </Popover>
                                 </Badge>
                             </div>
+                             */}
                         </div>
                     </div>
 
@@ -164,6 +167,9 @@ class App extends React.Component<AppProps,AppState>{
                                     )
                                 })
                             }
+                            <li>
+                                <Link to={assessCenterUrl} activeClassName="navBarActive"><i className=" fa fa-archive"></i>测试</Link>
+                            </li>
                         </ul>
                     </div>
                 </Affix>

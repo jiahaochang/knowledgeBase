@@ -23,17 +23,17 @@ export const MenuIDStructMap = {
     },
     majorLib: {
         icon: "123",
-        displayName: "名医库",
+        displayName: "医案库",
         url: "/majorLib",
     },
     subjectLib: {
         icon: "123",
-        displayName: "医案库",
+        displayName: "中医周边",
         url: "/subjectLib",
     },
     schoolStar: {
         icon: "123",
-        displayName: "健康测评",
+        displayName: "测试",
         url: "/schoolStar",
     },
 
