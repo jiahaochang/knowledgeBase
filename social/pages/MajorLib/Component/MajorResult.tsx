@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ItemsActions from '../../../actions/MajorLib/MajorLibAction'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {Icon} from 'antd'
+import {Icon,Card} from 'antd'
 
 import {isEmptyObject} from 'common/commonFunc'
 
@@ -73,6 +73,7 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
     getMajorResultList(){
         var list = [];
         var responseData = getDataFromContextByActionID(responseCacheContext.getResponseCache(),actionTypes.GET_MAJORLIB_MAJORLIB).result;
+        //获取jason数据
         var chosenSubjClassificationID =this.props.majorLibState.toJS().majorlib_subj_classification.majorTypeID; //专科 本科
         var chosenSubjCategoriesID =this.props.majorLibState.toJS().majorlib_subj_categories.majorCategoryID; //哲学 经济学
         var chosenMajorCategoriesID =this.props.majorLibState.toJS().majorlib_major_categories.majorMLID; //哲学类 经济学类
@@ -129,6 +130,7 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
             map["name"] = majorCategoryName;
             map["majorCategory"] = groupMap[item];
             lists.push(map);
+            //Removes the last element from an array and returns it.
         }
         return lists;
 
@@ -139,13 +141,14 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
         var this_ = this;
         var majorList = this.getMajorResultList();
         var ifShow = isEmptyObject( this.props.majorLibState.toJS().majorlib_search_value) || isEmptyObject(majorList)?"none":"block";
+        //判断是否为搜索结果
         return (
 
             <div className="profession-content-list">
-                <div className="show-search-text" style={{display:ifShow,marginBottom:"20px"}}>以下是您的专业查询结果：</div>
+                <div className="show-search-text" style={{display:ifShow,marginBottom:"20px"}}>以下是您的医案查询结果：</div>
                 {
                     isEmptyObject(majorList) &&
-                    <div className="show-search-text am-text-center" style={{marginBottom:"20px"}} >暂无匹配专业，请尝试其他关键词搜索吧<Icon type="frown" /></div>
+                    <div className="show-search-text am-text-center" style={{marginBottom:"20px"}} >暂无匹配医案，请尝试其他关键词搜索吧<Icon type="frown" /></div>
                 }
                 {majorList.map(function(major, index){
                         return (
@@ -153,9 +156,19 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
                                 <div className="profession-title">{major.name}</div>
                                 <ul className="profession-content">
                                     {major.majorCategory.map(function(item, index){
-                                            return  <li onClick={this_.showMajorDetail} id={item.subMajorMLID} key={index}>{item.subMajorMLName}</li>
-                                        }
-                                    )}
+                                            return (
+                                                //显示学科名称
+                                                <div>
+                                                    <br/>
+                                                    <li onClick={this_.showMajorDetail} id={item.subMajorMLID} key={index}>{item.subMajorMLName}</li>
+                                                    <br/>
+                                                    <Card title={item.subMajortitle} style ={{ width: '50%' }}>
+                                                        {item.subMajorSum}
+                                                    </Card>
+                                                    <br/>
+                                                </div>
+                                                )
+                                        })}
                                 </ul>
                             </div>
                         )

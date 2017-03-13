@@ -1,5 +1,6 @@
+//中医周边
 import * as React from 'react'
-import { Row, Col } from 'antd';
+import { Row, Col, Card,Collapse } from 'antd';
 import SubjectNameList = require('./Component/SubjectNameList');
 import SubjectContent = require('./Component/SubjectContent');
 import * as ItemsActions from '../../actions/SubjectLib/SubjectLibAction'
@@ -40,12 +41,14 @@ class SubjectLib extends React.Component<SubjectLibRouteProps,SubjectLibRouteSta
         return(
             <div className="main-container">
                 <Row>
-                    <Col span={18} style={{paddingRight:"20px"}}>
+                    <Col span={24} style={{paddingRight:"20px"}}>
                         <SubjectContent subName={currentSubjectName}/>
                     </Col>
+                    {/*
                     <Col span={6}>
                         <SubjectNameList subName={currentSubjectName} handleClick={this.handleClick}/>
                     </Col>
+                     */}
                 </Row>
             </div>
         )

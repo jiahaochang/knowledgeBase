@@ -36,10 +36,12 @@ class MajorIntro extends React.Component<MajorIntroProps, MajorIntroState> {
     }
 
     goBackToMajorLib(){
-        this.props.actions.mergeMajorPageShowWho({majorlib_major_page_show: majorShowList});//显示majorShowList
+        this.props.actions.mergeMajorPageShowWho({majorlib_major_page_show: majorShowList});//显示majorShowList；majorShowList = "majorResult"
+                                                //majorlib_major_page_show:""   当前 显示专业详情 还是 显示专业列表  intro/majorResult
+
     }
 
-    //数组按 introductionType 分组
+    //数组按 introductionType 分组（用来处理专业排名）
     changeArrayToMapGroupWithIntroductionType(data){
         var groupMap = {};
         for(let item of data){
@@ -62,9 +64,12 @@ class MajorIntro extends React.Component<MajorIntroProps, MajorIntroState> {
            majorType:this.props.majorLibState.toJS().majorlib_subj_classification.majorTypeID
        };
        var introductions = getDataByActionIDWithQuery(actionTypes.GET_MAJORLIB_MAJORDETAIL,queryObj).result.introductions;
+       //getDataByActionIDWithQuery 同步带参请求
        var map = {};
-       map["introductionKey"] = "专业代码";
+       map["introductionKey"] = "医案编号";
        map["introductionValue"] = this.props.subMajorML.subMajorMLID;
+       map["introductionGender"] = this.props.subMajorML.introductionAge;
+       //map["introductionGender"] = this.props.subMajorML.gender;
        map["introductionType"] = "0";
        introductions.unshift(map);
        var groupMap = this.changeArrayToMapGroupWithIntroductionType(introductions);
@@ -103,10 +108,12 @@ class MajorIntro extends React.Component<MajorIntroProps, MajorIntroState> {
         return (
             <div className="blueBack am-margin-top-lg">
                 <CardTitleWithLine  title={this.props.subMajorML.subMajorMLName}  rightText={<Button type="primary" onClick={this.goBackToMajorLib} style={{borderRadius:"0px"}}><Icon type="left" />返回</Button>}/>
+                {/*学科名和返回键*/}
                 <Row className="am-margin-top">
                     {dataMap["row"].map(function(item, index){
                             return (
-                                <Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
+                                //<Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
+                            <Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
                             )
                         }
                     )}
@@ -115,10 +122,12 @@ class MajorIntro extends React.Component<MajorIntroProps, MajorIntroState> {
                     <Tabs type="card">
                         {dataMap["tab"].map(function(item, index){
                                 var content =  <div >{item.introductionValue}</div>;
+                            {/*
                                 if(item.introductionType == "4"){
                                     var list = changeArrayForNewGroup(item.introductionValue,majorRankDefaultCount);
                                     content = <MajorIntroRank rankList={list}  />
                                 }
+                                */}
                                 return (
                                     <TabPane tab={item.introductionKey} key={index}>
                                         {content}

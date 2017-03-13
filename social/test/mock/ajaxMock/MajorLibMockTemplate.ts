@@ -21,12 +21,13 @@ majorLibMockTemplateTemp[majorLibActionTypes.GET_MAJORLIB_MAJORLIB] = {
             "1": [
                 {
                     majorCategoryID: "01",
-                    majorCategoryName: "哲学"
+                    //majorCategoryName: "哲学"
+                    majorCategoryName: "医案推荐"
                 },
-                {
+                /*{
                     majorCategoryID: "02",
                     majorCategoryName: "经济学"
-                }
+                }*/
             ],
             "2": []
         },
@@ -61,22 +62,37 @@ majorLibMockTemplateTemp[majorLibActionTypes.GET_MAJORLIB_MAJORLIB] = {
                 {
                     fatherMajorMLID:"0101",
                     subMajorMLID: "010101",
-                    subMajorMLName: "哲学"
+                    gender: "男",
+                    subMajorMLName: "清热利湿、化瘀散结治疗肝癌、门静脉高压症",
+                    subMajortitle:"男性患者 65岁",
+                    subMajorSum:"肝癌属肝胆湿热、气血瘀滞证，治以茵陈蒿汤和甘露消毒丹加减，清热利湿、化瘀散结",
                 },
+                //{
+                //    subMajorMLID: "010102",
+                //    gender: "女",
+                //    subMajorMLName: "清化湿热、疏肝和胃治疗十二指肠球部溃疡",
+                //    subMajortitle:"女性患者 38岁",
+                //    subMajorSum:"患妇产后腹痛，涩脉似枕而轻，以龙胆泻肝汤引之",
+                //},
                 {
                     subMajorMLID: "010102",
-                    subMajorMLName: "逻辑学"
+                    gender: "NULL",
+                    subMajorMLName: "NULL",
+                    subMajortitle:"NULL",
+                    subMajorSum:"NULL",
                 },
                 {
                     subMajorMLID: "010103",
-                    subMajorMLName: "宗教学"
+                    subMajorMLName: "NULL",
+                    subMajorSum:"",
                 },
                 {
                     subMajorMLID: "010104",
-                    subMajorMLName: "伦理学"
+                    subMajorMLName: "NULL",
+                    subMajorSum:"",
                 }
             ],
-            "0201": [
+           /* "0201": [
                 {
                     subMajorMLID: "020101",
                     subMajorMLName: "经济学"
@@ -139,7 +155,7 @@ majorLibMockTemplateTemp[majorLibActionTypes.GET_MAJORLIB_MAJORLIB] = {
                     subMajorMLID: "020402",
                     subMajorMLName: "国际经济与贸易"
                 }
-            ],
+            ], */
         }
     }
 };
@@ -156,52 +172,48 @@ majorLibMockTemplateTemp[majorLibActionTypes.GET_MAJORLIB_MAJORDETAIL] = {
     status: 'success',
     result: {
         subMajorMLID: "010102",
-
         introductions:[
             {
                 introductionID:"",
-                introductionKey:"授予学位",
-                introductionValue:"哲学学士",
+                //introductionKey:"授予学位",
+                introductionKey:"患者年龄",
+                //introductionValue:"哲学学士",
+                introductionValue:"65",
+                introductionGender:"男",
                 introductionType:"1",//1 中间 2 右边  3 tab
             },
             {
                 introductionID:"",
-                introductionKey:"修学年限",
-                introductionValue:"四年",
+                //introductionKey:"修学年限",
+                //introductionValue:"四年",
+                introductionKey:"是否初诊",
+                introductionValue:"是",
                 introductionType:"2",//1 中间 2 右边  3 tab
             },
             {
                 introductionID:"",
-                introductionKey:"专业解读",
-                introductionValue:"哲学实用性若但稀少的专业，经常讲物质决定意识。哲学是一门“爱智”学科，哲学是对普遍而基本的问题的研究，这些问题多与实在、存在、知识、价值、理性、心灵、语言、思想等有关。",
+                //introductionKey:"专业解读",
+                introductionKey:"提要",
+                introductionValue:"肝癌属肝胆湿热、气血瘀滞证，治以茵陈蒿汤和甘露消毒丹加减，清热利湿、化瘀散结。",
                 introductionType:"3",//1 中间 2 右边 3 tab
             },
             {
                 introductionID:"",
-                introductionKey:"核心教程",
-                introductionValue:"哲学概论  马克思主义哲学原理  中国哲学史  西方哲学史  科学技术哲学  伦理学  宗教学  美学  逻辑学  心理学  中外哲学原著导读等。",
+                //introductionKey:"核心教程",
+                introductionKey:"处方",
+                introductionValue:"茵陈 30g，栀子（焦）10g，大黄15g，豆蔻10g，广藿香10g，滑石粉10g（包煎），木通8g，黄芩10g，浙贝母10g，射干10g，丹参15g，赤芍15g，川芎10g，当归10g，桃仁10g，红花10g，莪术8g，甘草6g。4剂，水煎服，一日一剂，分两次温服。。",
                 introductionType:"3",//1 中间 2 右边  3 tab
             },
             {
                 introductionID:"",
-                introductionKey:"专业排名",
-                introductionValue:[
-                    {
-                        collegeName:"北京大学",
-                        rank:"A++"
-                    },
-                    {
-                        collegeName:"中国人民大学",
-                        rank:"A++"
-                    },
-                    {
-                        collegeName:"复旦大学",
-                        rank:"A+"
-                    }
-                ],
+                //introductionKey:"专业排名",
+                introductionKey:"按语",
+                introductionValue:"一般说来，胁痛初病在气，由肝郁气滞、气机不畅而致胁痛。气为血帅，气行则血行，故气滞日久，血行不畅，其病变由气滞转为血瘀，或气滞血瘀并见。气滞日久，易于化火伤阴；因饮食所伤，肝胆湿热，所致之胁痛，日久亦可耗伤阴津，皆可致肝阴耗伤，脉络失养，而转为虚证或虚实夹杂证。",
                 introductionType:"4",//1 中间 2 右边 3 tab 4 专业排名
             }
         ],
+
+
 
     },
 };

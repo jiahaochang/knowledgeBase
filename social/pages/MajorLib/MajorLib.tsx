@@ -27,7 +27,7 @@ let specialtyID = "";  //专科ID
 
 interface MajorLibRouteProps extends React.Props<MajorLib> {
     actions?:any,
-    majorLibState?: any
+    majorLibState?: any   //渲染subComponent时的点击状态
 
 }
 interface majorLibRouteState {
@@ -62,7 +62,7 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
     //本科专业、专科专业蓝框点击显示专业列表
     rightSearch(text){
         var map = {};
-        var majorTypeID = text.indexOf("本科")>-1?undergraduateID:specialtyID;
+        var majorTypeID = text.indexOf("本科")>-1  ?  undergraduateID  :  specialtyID;
         map["majorTypeID"] = majorTypeID;
         map["majorTypeName"] = text;
         this.props.actions.mergeSubjClassification({majorlib_subj_classification: map});
@@ -80,7 +80,7 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
         for(let item of data.majorType){
             var majorTypeName = item.majorTypeName;
             var majorTypeID = item.majorTypeID;
-            if(majorTypeName.indexOf("本科")>-1){
+            if(majorTypeName.indexOf("本科")>-1){   //majorTypeName中搜索字符串“本科”出现的位置
                 undergraduateID = majorTypeID;
             }else if(majorTypeName.indexOf("高职")>-1){
                 specialtyID = majorTypeID;
@@ -112,11 +112,16 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
 
     componentWillMount(){
         var this_ = this;
-        var responseData = getDataFromContextByActionID(responseCacheContext.getResponseCache(),actionTypes.GET_MAJORLIB_MAJORLIB).result;
+        var responseData = getDataFromContextByActionID(responseCacheContext.getResponseCache(),  actionTypes.GET_MAJORLIB_MAJORLIB).result;
+        /*从缓存中获取结果，如果缓存中没有，发起ajax，然后将结果放入缓存
+         * 缓存的key 是actionID 如果queryObj不为空，将其序列化后，以下划线链接*/
         this.getUnderGraduateAndSpecialtyInfo(responseData);
         var defaultSubjClassification = responseData.majorType[0];
-        this.props.actions.mergeSubjClassification({majorlib_subj_classification: defaultSubjClassification});//默认选中本科
-        this.props.actions.mergeMajorPageShowWho({majorlib_major_page_show: majorShowList});//默认显示majorList
+        this.props.actions.mergeSubjClassification({majorlib_subj_classification: defaultSubjClassification});
+
+        this.props.actions.mergeMajorPageShowWho({majorlib_major_page_show: majorShowList});
+        //majorlib_major_page_show: 当前显示专业详情/专业列表  intro/majorResult
+
     }
 
     //点击专业跳转到专业详情
@@ -132,28 +137,37 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
 
     render() {
 
-        var undergraduate = "本科专业"+undergraduateCount+"个";
-        var specialty = "专科专业"+specialtyCount+"个";
+        //var undergraduate = "本科专业"+undergraduateCount+"个";
+        //var specialty = "专科专业"+specialtyCount+"个";
         var subComponent = this.props.majorLibState.toJS().majorlib_major_page_show == majorShowIntro?<MajorIntro  subMajorML={this.state.subMajorML}  />: <MajorResult  showDetail={this.showMajorDetail} />
+        //var subComponent = <MajorIntro  subMajorML={this.state.subMajorML}  />
+
 
 
         return (
             <div className="main-container">
                 <Row>
-                    <Col span={18} style={{paddingRight:"20px"}}>
+                    <Col span={24} style={{paddingRight:"20px"}}>
+
                         <div className="block-box-shadows">
+                            {/*
                             <SearchBox  title="输入专业关键词" rightContent={[undergraduate,specialty]} searchCallBack={this.searchWithInput}  rightTextCallBack={this.rightSearch} />
+                            */}
+                            <SearchBox  title="输入医案关键词" searchCallBack={this.searchWithInput}   />
                         </div>
                         <div className="block-box-shadows" style={{marginTop:"40px"}}>
                             {subComponent}
                         </div>
                     </Col>
+                    {/*
                     <Col span={6}>
                         <SubjClassification title="学科类别"/>
                         <SubjCategories title="学科门类" />
                         <MajorCategories title="专业类别" />
                     </Col>
+                     */}
                 </Row>
+
             </div>
         )
     }
