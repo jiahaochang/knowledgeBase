@@ -20,11 +20,14 @@ import * as actionTypes from 'actions/MajorLib/MajorLibActionTypes'
 
 "use strict";
 
+//let非全局
 let undergraduateCount = 0; //本科专业个数
 let undergraduateID = ""; //本科ID
 let specialtyCount = 0;  //专科专业个数
 let specialtyID = "";  //专科ID
 
+//可选属性的好处之一是可以对可能存在的属性进行预定义，好处之二是可以捕获引用了不存在的属性时的错误
+//React.Props<MajorLib> ？
 interface MajorLibRouteProps extends React.Props<MajorLib> {
     actions?:any,
     majorLibState?: any   //渲染subComponent时的点击状态
@@ -36,6 +39,12 @@ interface majorLibRouteState {
 /**
  * 专业库
  */
+
+    //React.Component 是一个抽象的Class，通常继承该类来构建自定义的Component
+    //<>表示实现的接口？
+    //subMajorML:{}？
+    //bind(this)？
+    //react class中，方法的传入参数不需要指定类型？
 class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
     constructor(props) {
         super(props);
@@ -126,7 +135,13 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
 
     //点击专业跳转到专业详情
     showMajorDetail(subMajorML){
+        //mergeMajorPageShowWho方法，传入参数是subMajorML类型的，
+        //返回值是  type: actionTypes.MERGE_MAJOR_SHOW_WHO,  mergedState: state
         this.props.actions.mergeMajorPageShowWho({majorlib_major_page_show: majorShowIntro});//显示majorIntro
+        //subMajorMl是由interface majorLibRouteState指定的
+        //注意 setState({key(state名):value})的工作方式。你传递一个对象，其中包含你要更新的状态。
+        //传递的对象将具有与组件状态中的键相对应的键，然后 setState（）通过对象合并到状态来更新或设置状态。
+        //在这里，subMajorML状态被set为subMajorML
         this.setState({
             subMajorML:subMajorML,
         })
@@ -146,7 +161,9 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
 
         return (
             <div className="main-container">
-                <Row>
+                <Row>{/* 行 */}
+                    {/*  1.padding是内边距的意思，相对于margin外边距。
+                     2.我们用CSS的 padding 属性定义元素边框与元素内容之间的空白区域。 */}
                     <Col span={24} style={{paddingRight:"20px"}}>
 
                         <div className="block-box-shadows">

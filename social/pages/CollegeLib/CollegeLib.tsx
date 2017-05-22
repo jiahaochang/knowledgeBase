@@ -43,6 +43,7 @@ class CollegeLib extends React.Component<CollegeLibRouteProps, CollegeLibState> 
     static defaultProps = {
     };
 
+    //根据药材类别框的选取结果，在component mount之前改变state
     componentWillMount(){
         //左边--选择条件
         var conditions = getDataFromContextByActionID(responseCacheContext.getResponseCache(),actionTypes.GET_COLLEGELIB_CONDITIONS).result;
@@ -53,9 +54,6 @@ class CollegeLib extends React.Component<CollegeLibRouteProps, CollegeLibState> 
 
 
     render() {
-
-
-
         return (
             <div className="main-container">
                 <Row>
