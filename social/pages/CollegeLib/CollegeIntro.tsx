@@ -26,8 +26,15 @@ class CollegeIntro extends React.Component<CollegeIntroRouteProps, {}> {
 
     getCollegeDetail(){
         var postData = this.props.location.query;
-        var responseData = getDataByActionIDWithQuery(actionTypes.GET_COLLEGELIB_COLLEGEDETAIL, postData).result;
-        return responseData;
+        var responseData = getDataByActionIDWithQuery(actionTypes.GET_COLLEGELIB_COLLEGEDETAIL, postData).result.introList;
+        var map = {};
+        for (let item of responseData){
+
+            var id = item.collegeInfo.collegeID;
+            map[id] = {};
+            map[id]["collegeInfo"] = item.collegeInfo;
+        }
+        return map[postData.collegeID];
     }
 
 
@@ -35,25 +42,23 @@ class CollegeIntro extends React.Component<CollegeIntroRouteProps, {}> {
 
         var college = this.getCollegeDetail();
         var collegeInfo = college.collegeInfo;
-        var introduction = college.introduction;
+        var introduction = collegeInfo.introduction;
 
         return (
             <div className="main-container" style={{padding:"0px"}}>
                 <div className="block-box-shadows" style={{marginTop:"2.4rem"}}>
                     <div className="school-intro-gray">
-                        <img src={collegeInfo.logo} width="90" className="pull-left"/>
+                        <img src={collegeInfo.image} width="90" height="100" className="pull-left"/>
                         <div className="rightText">
                             <div className="line-one">
-                                <h3>{collegeInfo.collegeName}</h3>
-                                {collegeInfo.collegeLevel.map(function(level, index){
+                                <h3>{collegeInfo.medicinalMaterialName}</h3>
+                                {/*collegeInfo.collegeLevel.map(function(level, index){
                                         return <div className="school-level" key={index}>{level.collegeLevelName}</div>
                                     }
-                                )}
+                                )*/}
                             </div>
                             <div className="line-two">
-                                <span>{collegeInfo.collegeEnglishName}</span>
-                                <i className="fa fa-map-marker am-padding-left am-padding-right-xs"></i>
-                                <span>{collegeInfo.province}</span>
+                                <span>{collegeInfo.EnglishName}</span>
                             </div>
                         </div>
 
@@ -65,13 +70,18 @@ class CollegeIntro extends React.Component<CollegeIntroRouteProps, {}> {
                             <Tabs type="card">
                                 {introduction.map(function(item, index){
                                     var component = null;
-                                    if(item.introductionID == "intro"){
+                                    if(item.introductionID == "clinicalApplication"){
                                         component = <div className="school-intro-simple">{item.introductionValue}</div>;
-                                    }else if(item.introductionID == "require"){
-                                        component = <CollegeIntroRequireTable  data={item.introductionValue} />;
-                                    }else if(item.introductionID == "scoreLine"){
-                                        component = <CollegeBatchResult  data={item.introductionValue}  />
+                                    }else if(item.introductionID == "examplesOfPrescriptions"){
+                                        component = <div className="school-intro-simple">{item.introductionValue}</div>;
+                                    }else if(item.introductionID == "effect"){
+                                        component = <div className="school-intro-simple">{item.introductionValue}</div>;
+                                    }else if(item.introductionID == "medicinalPart"){
+                                        component = <div className="school-intro-simple">{item.introductionValue}</div>;
+                                    }else if(item.introductionID == "dosage"){
+                                        component = <div className="school-intro-simple">{item.introductionValue}</div>;
                                     }
+
                                     return <TabPane tab={item.introductionKey} key={index+1}>{component}</TabPane>
                                     }
                                 )}
@@ -81,33 +91,20 @@ class CollegeIntro extends React.Component<CollegeIntroRouteProps, {}> {
                     <Col span={8} style={{paddingLeft:"40px"}}>
                         <div className="school-intro-rightBox">
                             <img src={collegeInfo.image}/>
-                            <h3 className="college-name">{collegeInfo.collegeName}</h3>
+                            <h3 className="college-name">{collegeInfo.medicinalMaterialName}</h3>
                             <div className="intro">
                                 <Row>
                                     <Col span={12}>类别</Col>
-                                    <Col span={12}>{collegeInfo.foundationYear}</Col>
+                                    <Col span={12}>中药</Col>
                                 </Row>
                                 <Row>
                                     <Col span={12}>隶属于</Col>
                                     <Col span={12}>{collegeInfo.belongTo}</Col>
                                 </Row>
                                 <Row>
-                                    <Col span={12}>繁殖方法</Col>
-                                    <Col span={12}>{collegeInfo.totalStudentCount}</Col>
+                                    <Col span={12}>处方用命</Col>
+                                    <Col span={12}>{collegeInfo.chufangName}</Col>
                                 </Row>
-                                <Row>
-                                    <Col span={12}>栽培技术</Col>
-                                    <Col span={12}>{collegeInfo.academicianCount}</Col>
-                                </Row>
-                                <Row>
-                                    <Col span={12}>品种分类</Col>
-                                    <Col span={12}>{collegeInfo.keyDisciplineCount}</Col>
-                                </Row>
-                                <Row>
-                                    <Col span={12}>经济价值</Col>
-                                    <Col span={12}>{collegeInfo.collegeProp}</Col>
-                                </Row>
-
                             </div>
                         </div>
                     </Col>

@@ -1,5 +1,6 @@
 
 import * as actionTypes from './MajorLibActionTypes'
+import * as ajaxUtil  from "common/ajaxUtil";
 //学科类别  ----专科、本科
 export function mergeSubjClassification(state){
     return {
@@ -47,3 +48,20 @@ export function mergeMajorPageShowWho(state){
     
 }
 
+//当前页码
+export function mergeCurrentPage(state){
+    return {
+        type: actionTypes.MERGE_CURRENTPAGE,
+        mergeState: state
+    }
+}
+
+export function getMajorResult(postData){
+    var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_MAJORLIB_MAJORLIB, postData).result;
+    var initState = {majorLib_majorResult: responseData};
+    return {
+        type: actionTypes.MERGE_MAJORRESULT,
+        mergeState: initState
+    }
+
+}

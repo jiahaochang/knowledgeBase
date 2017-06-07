@@ -9,7 +9,7 @@ subjectLibActionMapTemp[ActionTypes.INIT_SUBJLIB_CURRENTSUBJ] = {
     url: initSubjLibUrl,
     moduleID: "subjectLib",
     operate: "read",
-    useMockData: true
+    useMockData: false
 };
 
 export const subjectLibActionMap = subjectLibActionMapTemp;

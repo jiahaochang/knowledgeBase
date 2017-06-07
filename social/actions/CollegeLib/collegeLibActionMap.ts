@@ -34,7 +34,7 @@ collegeLibActionMapTemp[ActionTypes.GET_COLLEGELIB_COLLEGEDETAIL] = {
     url: collegeLibDetailUrl,
     moduleID: "collegeLib",
     operate: "read",
-    useMockData: true
+    useMockData: true,
 };
 collegeLibUrlMapTemp.put(collegeLibDetailUrl, ActionTypes.GET_COLLEGELIB_COLLEGEDETAIL);  //url - actionID 映射
 

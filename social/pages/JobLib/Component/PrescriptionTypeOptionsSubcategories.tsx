@@ -2,12 +2,12 @@ import * as React from 'react'
 import * as ItemsActions from '../../../actions/JobLib/JobLibAction'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Row, Col,Icon } from 'antd';
+import { Row, Col,Icon,Pagination} from 'antd';
 import CardTitleWithLine = require('../../../common/Component/CardTitleWithLine');
 import  PrescriptionIntroSinglePart = require('./PrescriptionIntroSinglePart');
 import {removeRepeatObjectElementInArray} from 'common/commonFunc'
 "use strict";
-
+import {isEmptyObject} from 'common/commonFunc'
 import {getDataByActionIDWithQuery} from '../../../common/ajaxUtil'
 import * as ActionTypes from '../../../actions/JobLib/JobLibActionTypes'
 
@@ -15,6 +15,8 @@ import * as context from '../JobLibContext'
 /**
  * 方剂库---方剂小类
  */
+let defaultCurrentPage = 1;
+let defaultPageSize = 100;
 interface JobOptionsMLProps extends React.Props<JobOptionsML> {
     options:Array<any>,
     jobLibState?: any,
@@ -24,14 +26,17 @@ interface JobOptionsMLProps extends React.Props<JobOptionsML> {
     refreshCurrentSubJobCategoryID?: Function
 }
 interface JobOptionsMLState {
+    currentPage:any,
 }
 
 class JobOptionsML extends React.Component<JobOptionsMLProps, JobOptionsMLState> {
     constructor(props) {
         super(props);
         this.state = {
+            currentPage:defaultCurrentPage,
         };
         this.showActive = this.showActive.bind(this);
+        this.onChangePagination = this.onChangePagination.bind(this);
     }
 
     static defaultProps = {
@@ -48,11 +53,19 @@ class JobOptionsML extends React.Component<JobOptionsMLProps, JobOptionsMLState>
         }
     }
 
+    onChangePagination(page){
+        this.setState({
+            currentPage:page
+        });
+    }
+
     componentWillMount(){
 
     }
 
     render() {
+        var current = this.state.currentPage;
+
         var this_ = this;
         // 获取搜索输入的字符串
         // @param jobSearchInput 搜索关键字
@@ -108,25 +121,38 @@ class JobOptionsML extends React.Component<JobOptionsMLProps, JobOptionsMLState>
             }
         }
 
+        var hasResult = isEmptyObject(subJobCategories)? false : true;
+        var total = subJobCategories.length;
+
         return (
-            <div className="blueBack block-box-shadows" style={{margin:"30px 15px",padding:"20px 20px 30px"}}>
+            <div className="blueBack block-box-shadows" style={{/*margin:"30px 15px",padding:"20px 20px 30px"*/}}>
                 <CardTitleWithLine title={title}/>
                 <div className="careerML-options">
                     {
                         subJobCategories.map(function(option, index){
-                            if(option.subJobCategoryID == subJobCategoryID){
-                                //如果该方剂ID与点击选中的方剂ID相同，则显示为active状态
-                                var activeClassName = "active";
-                            }else{
-                                var activeClassName = "";
+                            if( ((current-1) *defaultPageSize-1) < index && index < (current*defaultPageSize) ){
+                                if(option.subJobCategoryID == subJobCategoryID){
+                                    //如果该方剂ID与点击选中的方剂ID相同，则显示为active状态
+                                    var activeClassName = "active";
+                                    }else{
+                                    var activeClassName = "";
+                                    }
+                                return (
+                                <a key={index} className={activeClassName} onClick={this_.showActive}
+                                   id={option.subJobCategoryID}>{option.subJobCategoryName}</a>
+                                )
                             }
-                            return (
-                                <a key={index} className={activeClassName} onClick={this_.showActive} id={option.subJobCategoryID} >{option.subJobCategoryName}</a>
-                            )
                         })
                     }
                 </div>
-
+                <div>
+                    {
+                        hasResult &&
+                        <div className="am-margin-top-sm">
+                            <Pagination  current={current} onChange={this.onChangePagination} total={total} pageSize={defaultPageSize}  showTotal={total => `共 ${total} 条`} />
+                        </div>
+                    }
+                </div>
                 <div className="am-margin-top-lg">
                     <CardTitleWithLine title="方剂介绍"/>
                     {

@@ -68,7 +68,7 @@ class JobLib extends React.Component<JobLibProps, JobLibRouteState> {
         return (
             <div className="main-container">
                 <Row>
-                    <Col span={17}>
+                    <Col span={16}>
                         <div className="mlr20">
                             <div className="block-box-shadows">
                                 <SearchBox  title="输入方剂关键词"  searchCallBack={this.searchWithInput} rightContent={[jobCount]} rightTextCallBack={this.rightSearch.bind(this)} />

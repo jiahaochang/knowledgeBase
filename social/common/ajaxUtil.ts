@@ -6,16 +6,18 @@ import { Modal } from 'antd'
 declare var hzyCommon:any;
 "use strict";
 import {getActionInfo} from "./operateActionUtil";
-import {GlobalDatasource} from "./commonVar";
+//import {GlobalDatasource} from "./commonVar";
 import { mockDataByUrl } from 'test/mock/MockUtil'
 import {getActionBasicInfo} from "./Module/ActionInfoUtil";
 import {getUserIDFromStorage, getRegionIDFromStorage, getSchoolIDFromStorage} from "./storageUtil";
 import {GET_COMMON_OTHERUSERREGIONSCHOOLINFO} from "../actions/CommonAction/CommonActionTypes";
 const objectAssign = require('object-assign');
 declare var XMLHttpRequest:any;
+var GlobalDatasource = "GlobalForceUseMockData";
 
 export function isUserMockData(actionID:string):boolean{
     //return true;
+    console.log(GlobalDatasource);
     if (GlobalDatasource === "GlobalForceToUseRealData"){
         return false;
     }else if (GlobalDatasource === "GlobalForceUseMockData"){

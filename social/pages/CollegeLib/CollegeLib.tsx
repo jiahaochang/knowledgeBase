@@ -77,8 +77,6 @@ class CollegeLib extends React.Component<CollegeLibRouteProps, CollegeLibState> 
                             <div className="profession-screen-single">
                                 <h3 className="profession-screen-title">药材类别</h3>
                                 <div className="condition-list">
-                                    <SchoolConditionOptions optionsFlag="province" options={this.state.conditions.province} />
-                                    
                                     <SchoolConditionOptions optionsFlag="collegeProp" options={this.state.conditions.collegeProp} />
                                 </div>
                             </div>

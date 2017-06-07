@@ -147,7 +147,7 @@ class MajorLib extends React.Component<MajorLibRouteProps, majorLibRouteState> {
         return (
             <div className="main-container">
                 <Row>
-                    <Col span={24} style={{paddingRight:"20px"}}>
+                    <Col span={20} style={{paddingRight:"20px"}}>
 
                         <div className="block-box-shadows">
                             {/*

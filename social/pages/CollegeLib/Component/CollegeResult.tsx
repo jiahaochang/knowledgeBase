@@ -29,10 +29,12 @@ class CollegeResult extends React.Component<CollegeResultProps, CollegeResultSta
         super(props);
 
         this.onChangePagination = this.onChangePagination.bind(this);
+        this.getResultList = this.getResultList.bind(this);
+
     }
 
-    static defaultProps = {
-    };
+    /*static defaultProps = {
+    };*/
 
     componentWillMount(){
         var postData = getSearchConditionFromStateTree(this.props.collegeLibState.toJS());
@@ -74,12 +76,50 @@ class CollegeResult extends React.Component<CollegeResultProps, CollegeResultSta
     collection = <Button  type="primary"  onClick={this_.collectCollege.bind(this_,info.collegeID)}>{COLLECTION_ALREADY}</Button>;
     line 110  has {collection}
 }*/
+    getResultList(responseData){
+        var collegePropID = this.props.collegeLibState.toJS().collegeLib_collegeOptions_collegeProp;
+        var resultList = [];
+
+        var searchKey = this.props.collegeLibState.toJS().collegeLib_searchBox_input;
+
+        if(collegePropID.length>0 && !isEmptyObject(collegePropID[0])){
+            for (let item of responseData.colleges){
+                if(collegePropID.indexOf(item.typeID)>=0){
+                    if(searchKey == ""){
+                        resultList.push(item);
+                    }
+                }
+                if(searchKey!="") {
+                    if (item.medicinalMaterialName.indexOf(searchKey) >= 0) {
+                        resultList.push(item);
+                    }
+                }
+            }
+        }else if(collegePropID.length == 0 || isEmptyObject(collegePropID[0])){
+            if(responseData.length == 0){
+                resultList=[]
+            }else {
+                if(searchKey == "")
+                resultList = responseData.colleges;
+                if(searchKey!="") {
+                    for (let item of responseData.colleges) {
+                        if (item.medicinalMaterialName.indexOf(searchKey) >= 0) {
+                            resultList.push(item);
+                        }
+                    }
+                }
+            }
+        }
+        return resultList;
+    }
 
     render() {
         var this_ = this;
-        var responseData = this.props.collegeLibState.toJS().collegeLib_collegeResult;
-        var collegeList =isEmptyObject(responseData)?[]: responseData.colleges;
-        var total = isEmptyObject(responseData)?0:responseData.total;
+        var tempData = this.props.collegeLibState.toJS().collegeLib_collegeResult;
+        var responseData = isEmptyObject(tempData)?[]:tempData;
+        var collegeList = this.getResultList(responseData);
+
+        var total = collegeList.length;
         var current = this.props.collegeLibState.toJS().collegeLib_currentPage;
         var hasResult = isEmptyObject(responseData)? false:true;
 
@@ -87,36 +127,32 @@ class CollegeResult extends React.Component<CollegeResultProps, CollegeResultSta
 
         return (
             <div>
-                {collegeList.map(function(info, index){
+                {
+                    collegeList.map(function(info, index){
                     //maybe has collection
-                    return (
-                        <div className="am-cf school-intro-single" key={index}>
-                        <img src={info.logo} width="90" className="pull-left" onClick={this_.showCollegeIntro.bind(this_,info.collegeID)}/>
-                        <div className="middle-intro">
-                            <div className="line-one">
-                                <h3 onClick={this_.showCollegeIntro.bind(this_,info.collegeID)}>{info.collegeName}</h3>
-                                {info.collegeLevel.map(function(level, index){
-                                        return <div className="school-level" key={index}>{level.collegeLevelName}</div>
-                                    }
-                                )}
-
+                    if( ((current-1) *defaultPageSize-1) < index && index < (current*defaultPageSize) )
+                        {
+                            return (
+                            <div className="am-cf school-intro-single" key={index}>
+                                <img src={info.logo} width="90" height="110" className="pull-left"
+                                     onClick={this_.showCollegeIntro.bind(this_,info.collegeID)}/>
+                                <div className="middle-intro">
+                                    <div className="line-one">
+                                        <h3 onClick={this_.showCollegeIntro.bind(this_,info.collegeID)}>{info.medicinalMaterialName}</h3>
+                                    </div>
+                                    <div className="line-two">
+                                        <div>隶属    ：{info.belongTo}</div>
+                                    </div>
+                                    <div className="line-three">
+                                        <div>处方用名：{info.chufangName}</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="line-two">
-                                <div>隶属：{info.belongTo}</div>
-                                <div>形态特征：{info.masterStationCount}</div>
-                            </div>
-                            <div className="line-three">
-                                <div>分布范围：{info.keyDisciplineCount}</div>
-                                <div>生长环境：{info.doctorStationCount}</div>
-                                {
-                                    info.hasAdmissionTeacher && <div className="teacherComing"><i className="fa fa-user"></i>招办老师已入住</div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                        )
+                            )
+                        }
                     }
-                )}
+                    )
+                }
 
                 {
                     hasResult &&

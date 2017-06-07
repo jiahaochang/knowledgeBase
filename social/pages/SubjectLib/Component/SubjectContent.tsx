@@ -41,10 +41,10 @@ class SubjectContent extends React.Component<SubjectContentProps, {}> {
                                 <p>{item.referenceValue}</p>
                             </Panel>
                             <Panel header={item.referenceKey} key="2">
-                                <p>{item.referenceValue1}</p>
+                                <p>{item.referenceValue}</p>
                             </Panel>
                             <Panel header={item.referenceKey} key="3">
-                                <p>{item.referenceValue2}</p>
+                                <p>{item.referenceValue}</p>
                             </Panel>
                         </Collapse>
                             )

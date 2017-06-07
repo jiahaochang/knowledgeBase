@@ -39,13 +39,14 @@ class JobIntroSinglePart extends React.Component<JobIntroSinglePartProps, JobInt
     }
 
     render() {
+        var intro = this.state.introductions;
         return (
             <div className="career-intro-list" >
                 {
                     this.state.introductions.map(function(intro, index){
                         return (
                             <div className="career-intro-single" key={index}>
-                                <div className="title"><span>{intro.introductionKey}</span></div>
+                                <div className="title"><span>{intro.introductionkey}</span></div>
                                 <pre>{intro.introductionValue}</pre>
                             </div>
                         )

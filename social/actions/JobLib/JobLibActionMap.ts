@@ -9,7 +9,7 @@ jobLibActionMapTemp[ActionTypes.GET_JOBLIB_JOBLIB] = {
     url: mergeJobOptionsCareerUrl,
     moduleID: "jobLib",
     operate: "read",
-    useMockData: true
+    useMockData: false,
 };
 
 export const jobLibActionMap = jobLibActionMapTemp;
@@ -19,7 +19,7 @@ jobLibActionMapTemp[ActionTypes.GET_JOBLIB_JOBINTRODUCTION] = {
     url: getJobIntroductionUrl,
     moduleID: "jobLib",
     operate: "read",
-    useMockData: true
+    useMockData: false,
 };
 
 //为了方便模拟数据产生，需要添加 url - actionID 映射，与上面的actionID basicInfo 成对出现

@@ -105,41 +105,45 @@ class MajorIntro extends React.Component<MajorIntroProps, MajorIntroState> {
     render() {
         var this_ = this;
         var dataMap = this.getMajorIntro();
+        //var id=this.props.subMajorML.subMajorMLID;
+        var id=this.props.subMajorML.subMajorMLID;
+        var flag=0;
         return (
             <div className="blueBack am-margin-top-lg">
                 <CardTitleWithLine  title={this.props.subMajorML.subMajorMLName}  rightText={<Button type="primary" onClick={this.goBackToMajorLib} style={{borderRadius:"0px"}}><Icon type="left" />返回</Button>}/>
                 {/*学科名和返回键*/}
                 <Row className="am-margin-top">
-                    {dataMap["row"].map(function(item, index){
-                            return (
-                                //<Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
-                            <Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
-                            )
-                        }
-                    )}
+                    {/*{dataMap["row"].map(function(item, index){
+                     return (
+                     //<Col span={8} key={index} >{item.introductionKey}：{item.introductionValue}</Col>
+                     <Col span={8} key={index} >{item.introductionKey}：{temp.subMajorMLID}</Col>
+                     )
+                     }
+                     )} */}
                 </Row>
                 <div className="card-container card-container-grayLine am-margin-top">
-                    <Tabs type="card">
-                        {dataMap["tab"].map(function(item, index){
-                                var content =  <div >{item.introductionValue}</div>;
-                            {/*
-                                if(item.introductionType == "4"){
-                                    var list = changeArrayForNewGroup(item.introductionValue,majorRankDefaultCount);
-                                    content = <MajorIntroRank rankList={list}  />
-                                }
-                                */}
-                                return (
-                                    <TabPane tab={item.introductionKey} key={index}>
-                                        {content}
-                                    </TabPane>
+                    {dataMap["row"].map(function(item, index){
+                        if(item.introductionID==id){
+                            flag=index;
+                            return (
+                            <Tabs defaultActiveKey="1" >
+                                <TabPane tab="病患信息" key="1">
+                                    {item.introductionInfo}
+                                </TabPane>
+                                <TabPane tab="病症信息" key="2">
+                                    {item.introductionDetail}
+                                </TabPane>
+                                <TabPane tab="藥方信息" key="3">
+                                    {item.introductionCure}
+                                </TabPane>
+                            </Tabs>
                                 )
-
                             }
+                        }
                         )}
-                    </Tabs>
 
                 </div>
-                
+
             </div>
 
         )

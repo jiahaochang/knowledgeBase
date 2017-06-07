@@ -40,12 +40,12 @@ jobLibMockTemplateTemp[jobLibActionTypes.GET_JOBLIB_JOBLIB] = {
             }
             ,
             {
-                jobCategoryID: "15",
+                jobCategoryID: "17",
                 jobCategoryName:"口服液"
             }
             ,
             {
-                jobCategoryID: "15",
+                jobCategoryID: "18",
                 jobCategoryName:"注射液"
             }
         ],

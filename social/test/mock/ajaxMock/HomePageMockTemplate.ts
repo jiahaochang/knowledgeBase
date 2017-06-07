@@ -719,6 +719,17 @@ studentMockTemplateTemp[studentActionTypes.SCHOOL_PROVIDED_IMPRESSIONS] = {
     }
 }
 
+studentMockTemplateTemp[studentActionTypes.GET_RESULTINTRO] = {
+    status: 'success',
+    result: {
+                searchTypeID:"01",              //结果类型ID
+                searchTypeName:"医案",          //搜索结果类型名称
+                searchResultContent: "亚健康",  //搜索结果名称
+                searchResultID: "01",           //查询结果在表中的ID
+                summary:"神志清，精神欠佳，面色晦暗，右上腹疼痛，腹胀，口干苦，纳差乏力，大便未解，小便黄赤。舌质淡，苔黄腻，脉弦涩",                     //概要，简介
+                searchResultIntroduction:"神志清，精神欠佳，面色晦暗，右上腹疼痛，腹胀，口干苦，纳差乏力，大便未解，小便黄赤。舌质淡，苔黄腻，脉弦涩" //详情介绍
+    }
+}
 
 //保存对同学的印象
 postData = {
@@ -734,6 +745,56 @@ studentMockTemplateTemp[studentActionTypes.SET_STUDENT_IMPRESSIONS] = {
     status: 'success',
 }
 
+
+studentMockTemplateTemp[studentActionTypes.GET_HOMEPAGE_SEARCHRESULT] = {
+    status: 'success',
+    result: {
+        searchResult: [
+            {
+                ResultTypeID:"01",              //结果类型ID
+                searchTypeName:"医案",          //搜索结果类型名称
+                searchResultContent: "亚健康",  //搜索结果名称
+                searchResultID: "01",           //查询结果在表中的ID
+                summary:"神志清，精神欠佳，面色晦暗，右上腹疼痛，腹胀，口干苦，纳差乏力，大便未解，小便黄赤。舌质淡，苔黄腻，脉弦涩",                     //概要，简介
+            },
+            {
+                ResultTypeID:"02",
+                searchTypeName:"药材",
+                searchResultContent: "各种毛病",
+                searchResultID: "02",
+                summary:"神志清，精神欠佳，面色晦暗，右上腹疼痛，腹胀，口干苦，纳差乏力，大便未解，小便黄赤。舌质淡，苔黄腻，脉弦涩",
+            },
+            {
+                ResultTypeID:"03",
+                searchTypeName:"方剂",
+                searchResultContent: "没毛病",
+                searchResultID: "02",
+                summary:"神志清，精神欠佳，面色晦暗，右上腹疼痛，腹胀，口干苦，纳差乏力，大便未解，小便黄赤。舌质淡，苔黄腻，脉弦涩",
+            },
+            {
+                ResultTypeID:"01",
+                searchTypeName:"中医周边",
+                searchResultContent: "亚健康",
+                searchResultID: "01",
+                summary:"胃脘部疼痛，脘闷灼热，口干口苦，口渴而不欲饮，纳差乏力",
+            },
+            {
+                ResultTypeID:"02",
+                searchTypeName:"医案",
+                searchResultContent: "各种毛病",
+                searchResultID: "02",
+                summary:"胃脘部疼痛，脘闷灼热，口干口苦，口渴而不欲饮，纳差乏力",
+            },
+            {
+                ResultTypeID:"03",
+                searchTypeName:"医案",
+                searchResultContent: "没毛病",
+                searchResultID: "02",
+                summary:"胃脘部疼痛，脘闷灼热，口干口苦，口渴而不欲饮，纳差乏力",
+            },
+        ]
+    }
+}
 
 
 export var studentMockTemplate = studentMockTemplateTemp;

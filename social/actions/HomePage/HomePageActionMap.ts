@@ -139,7 +139,24 @@ homePageActionMapTemp[ActionTypes.GET_STUDENT_LATESTVISITOR] = {
 };
 homePageUrlMapTemp.put(latestVisitorUrl, ActionTypes.GET_STUDENT_LATESTVISITOR);  //url - actionID 映射
 
+//获取主页搜索结果
+var searchUrl = "/HomePageSearch/Get/HomePageSearchResult";
+homePageActionMapTemp[ActionTypes.GET_HOMEPAGE_SEARCHRESULT] = {
+    url: searchUrl,
+    moduleID: "homePage",
+    operate: "read",
+    useMockData: true
+};
+homePageUrlMapTemp.put(searchUrl, ActionTypes.GET_HOMEPAGE_SEARCHRESULT);  //url - actionID 映射
 
+var IntroUrl = "/HomePageSearch/Get/HomePageSearchResultIntro";
+homePageActionMapTemp[ActionTypes.GET_RESULTINTRO] = {
+    url: IntroUrl,
+    moduleID: "homePage",
+    operate: "read",
+    useMockData: true
+};
+homePageUrlMapTemp.put(IntroUrl, ActionTypes.GET_RESULTINTRO);  //url - actionID 映射
 
 export const homePageActionMap = homePageActionMapTemp;
 export const homePageUrlMap = homePageUrlMapTemp;
