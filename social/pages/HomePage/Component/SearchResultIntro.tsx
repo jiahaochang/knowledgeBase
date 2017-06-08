@@ -37,9 +37,11 @@ class SearchResultIntro extends React.Component<SearchResultIntroProps, SearchRe
     componentWillMount(){
         //var postData = this.props.introID.searchResultID;
         var searchResultID = this.props.homePageState.toJS().showIntroductionID;
-        var postData = {searchResultID:searchResultID};
-        var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_RESULTINTRO, postData).result;
+        var postData={searchResultID:searchResultID};
+        //var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_RESULTINTRO, postData).result;
         //var responseData = ajaxUtil.getDataFromContextByActionID(responseCacheContext.getResponseCache(),actionTypes.GET_RESULTINTRO).result;
+        var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_RESULTINTRO, postData).result;
+        var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_RESULTINTRO, postData).result;
         this.setState({
             introduction:responseData,
         })

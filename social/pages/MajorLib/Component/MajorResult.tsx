@@ -95,10 +95,21 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
 
     getMajorResultList(responseData){
         var list = [];
-        var lists = [];
+        list = responseData.majorML2SubMajorMLMap["0101"];
+
+        var searchValue = this.props.majorLibState.toJS().majorlib_search_value;
+
+        var returnlist=[];
+
+        for (var item of list) {
+            if(item.subMajorMLName.indexOf(searchValue)>-1 || item.subMajorTitle.indexOf(searchValue)>-1){
+                returnlist.push(item);
+            }
+        }
+
         //var responseData = getDataFromContextByActionID(responseCacheContext.getResponseCache(),actionTypes.GET_MAJORLIB_MAJORLIB).result;
         //获取jason数据
-        if(!isEmptyObject(responseData)) {
+        /*if(!isEmptyObject(responseData)) {
             var chosenSubjClassificationID = this.props.majorLibState.toJS().majorlib_subj_classification.majorTypeID; //专科 本科
             var chosenSubjCategoriesID = this.props.majorLibState.toJS().majorlib_subj_categories.majorCategoryID; //哲学 经济学
             var chosenMajorCategoriesID = this.props.majorLibState.toJS().majorlib_major_categories.majorMLID; //哲学类 经济学类
@@ -162,8 +173,8 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
                 lists.push(map);
                 //Removes the last element from an array and returns it.
             }
-        }
-        return lists;
+        }*/
+        return returnlist;
 
     }
 
@@ -191,7 +202,7 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
         var hasResult = isEmptyObject(majorList)? false : true;
         //var current = this.props.majorLibState.toJS().majorLib_currentPage;
         var current = this.state.majorLib_currentPage;
-        var total = 128;
+        var total = majorList.length;
 
         return (
 
@@ -202,36 +213,26 @@ class MajorResult extends React.Component<MajorResultProps, MajorResultState> {
                     <div className="show-search-text am-text-center" style={{marginBottom:"20px"}} >暂无匹配医案，请尝试其他关键词搜索吧<Icon type="frown" /></div>
                 }
 
-                {majorList.map(function(major, index){
+                {majorList.map(function(item, index){
+                    if( ((current-1) *defaultPageSize-1) < index && index < (current*defaultPageSize) ){
                     return (
                     <div key={index}>
-                            {major.majorCategory.map(function(item, index){
-                                if( ((current-1) *defaultPageSize-1) < index && index < (current*defaultPageSize) )
-                                    {
-                                        return (
-                                            //显示学科名称
-                                        <div className="block-box-shadows" style={{marginTop:"5px"}}>
-                                            <div className="profession-single2 am-cf" key={index}>
-                                                <div className="profession-title">
-                                                <li onClick={this_.showMajorDetail} id={item.subMajorMLID} key={index}>{item.subMajorMLName}</li>
-                                                </div>
-                                                <Card title={item.subMajorTitle}>
-                                                    {item.subMajorDetail}
-                                                </Card>
-                                                <br/>
-                                            </div>
-                                        </div>
-                                        )
-                                    }
-                                })}
-
+                        <div className="block-box-shadows" style={{marginTop:"5px"}}>
+                            <div className="profession-single2 am-cf" key={index}>
+                                <div className="profession-title">
+                                <li onClick={this_.showMajorDetail} id={item.subMajorMLID} key={index}>{item.subMajorMLName}</li>
+                                </div>
+                                <Card title={item.subMajorTitle}>
+                                    {item.subMajorDetail}
+                                </Card>
+                                <br/>
+                            </div>
+                        </div>
                     </div>
                         )
+                        }
                     }
                     )}
-
-
-
 
                 {
                     hasResult &&

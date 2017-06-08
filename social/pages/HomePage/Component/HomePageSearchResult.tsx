@@ -52,8 +52,8 @@ class HomePageSearchResult extends React.Component<HomePageSearchResultProps, Ho
 
     componentWillMount(){
         var this_=this;
-        var searchKey = this.props.searchKey;
-        var postData = {searchKey:searchKey};
+        var val = this.props.searchKey;
+        var postData={searchKey:val};
         var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_HOMEPAGE_SEARCHRESULT, postData).result;
         this_.setState({
             currentPage:defaultCurrentPage,
@@ -65,8 +65,7 @@ class HomePageSearchResult extends React.Component<HomePageSearchResultProps, Ho
 
     //分页显示
     onChangePagination(page){
-        var postData = {searchKey:this.props.searchKey};
-
+        var postData = this.props.searchKey;
         var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_HOMEPAGE_SEARCHRESULT, postData).result;
         this.setState({
             currentPage:page,
@@ -77,8 +76,8 @@ class HomePageSearchResult extends React.Component<HomePageSearchResultProps, Ho
 
     searchWithInput(val) {
         var this_=this;
-        //var postData = val;
-        var postData = {searchKey:val};
+        var postData = val;
+        postData={searchKey:val};
         var responseData = ajaxUtil.getDataByActionIDWithQuery(actionTypes.GET_HOMEPAGE_SEARCHRESULT, postData).result;
         this_.setState({
             currentPage:defaultCurrentPage,
@@ -106,13 +105,14 @@ class HomePageSearchResult extends React.Component<HomePageSearchResultProps, Ho
 
     render() {
         var this_ = this;
-        var resultList = this.state.searchResult.searchResult;
+        //var resultList = this.state.searchResult.searchResult;
+        var resultList = this.state.searchResult;
         var ifShow = isEmptyObject( this.props.searchKey) || isEmptyObject(resultList)?"none":"block";
         var hasResult = true;
         var current = this.state.currentPage;
         var total = resultList.length;
         var showIntroduction = this.props.homePageState.toJS().showIntroduction;
-        //var introduction = this.state.introductionMap;
+
 
         return (
 
